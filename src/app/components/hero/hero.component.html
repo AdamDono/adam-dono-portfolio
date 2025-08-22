@@ -1,0 +1,43 @@
+<section id="home" class="hero">
+  <!-- Animated Background Circles -->
+  <div class="floating-circles">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+    <div class="circle circle-3"></div>
+    <div class="circle circle-4"></div>
+    <div class="circle circle-5"></div>
+    <div class="circle circle-6"></div>
+    <div class="circle circle-7"></div>
+    <div class="circle circle-8"></div>
+  </div>
+  
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-greeting">Hi, I'm <span class="hero-name">Adam Dono</span></h1>
+      
+      <h2 class="hero-title">{{ title }}</h2>
+      
+      <p class="hero-subtitle">{{ subtitle }}</p>
+      
+      <p class="hero-description">{{ description }}</p>
+      
+      <div class="hero-buttons">
+        @for (button of ctaButtons; track button.text) {
+          <button 
+            class="cta-button {{ button.class }}"
+            (click)="handleButtonClick(button.action)">
+            {{ button.text }}
+          </button>
+        }
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="hero-image-placeholder">
+        <div class="profile-circle">
+          <span class="profile-initials">AD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

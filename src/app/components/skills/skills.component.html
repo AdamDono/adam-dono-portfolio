@@ -1,0 +1,74 @@
+<section id="skills" class="skills-section">
+  <div class="container">
+    <h2 class="section-title">Skills & Expertise</h2>
+    
+    <p class="skills-intro">{{ introText }}</p>
+    
+    <div class="skills-grid">
+      @for (category of skillCategories; track category.title) {
+        <div class="skill-category">
+          <h3 class="category-title">{{ category.title }}</h3>
+          
+          <div class="skills-list">
+            @for (skill of category.skills; track skill.name) {
+              <div class="skill-item">
+                <div class="skill-header">
+                  <div class="skill-name-wrapper">
+                    <i class="skill-icon {{ skill.icon }}"></i>
+                    <span class="skill-name">{{ skill.name }}</span>
+                  </div>
+                  <span class="skill-percentage">{{ skill.percentage }}%</span>
+                </div>
+                
+                <div class="skill-bar">
+                  <div 
+                    class="skill-progress" 
+                    [style.width.%]="skill.percentage"
+                    [attr.data-percentage]="skill.percentage">
+                  </div>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+
+<!-- design-process.component.html -->
+<section class="design-process-section">
+  <div class="container">
+    <h2 class="section-title">My Design Process</h2>
+    
+    <p class="process-subtitle">A proven methodology for delivering successful design solutions</p>
+    
+    <div class="process-steps">
+      <div class="process-step">
+        <h3>User Research</h3>
+        <p>Understanding user needs and behaviors through interviews and testing</p>
+      </div>
+      
+      <div class="process-step">
+        <h3>Design & Prototype</h3>
+        <p>Creating wireframes, mockups, and interactive prototypes</p>
+      </div>
+      
+      <div class="process-step">
+        <h3>Development</h3>
+        <p>Building responsive and accessible user interfaces</p>
+      </div>
+      
+      <div class="process-step">
+        <h3>Testing & Iteration</h3>
+        <p>Continuous improvement based on user feedback</p>
+      </div>
+    </div>
+    
+  
+  </div>
+</section>
+
+
+
+</section>

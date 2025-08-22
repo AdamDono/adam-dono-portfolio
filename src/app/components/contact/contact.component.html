@@ -1,0 +1,105 @@
+<!-- contact.component.html -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Let's Work Together</h2>
+    
+    <p class="contact-intro">Ready to bring your ideas to life? I'd love to hear about your project and discuss how we can create something amazing together.</p>
+    
+    <div class="contact-content">
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <a [href]="'mailto:' + contactInfo.email" class="contact-value">{{ contactInfo.email }}</a>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-label">Phone</div>
+            <a [href]="'tel:' + contactInfo.phone" class="contact-value">{{ contactInfo.phone }}</a>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">{{ contactInfo.location }}</div>
+          </div>
+        </div>
+        
+        <div class="social-links">
+          <div class="social-label">Follow Me</div>
+          <div class="social-icons">
+            <a href="#" class="social-icon">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-dribbble"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-behance"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form-container">
+        <h3>Available for Projects</h3>
+        <p class="availability-text">I'm currently available for freelance projects and full-time opportunities. Let's discuss your vision and create something extraordinary together.</p>
+        
+        <form (ngSubmit)="onSubmit()" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              [(ngModel)]="contactForm.name" 
+              placeholder="Your name" 
+              required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              [(ngModel)]="contactForm.email" 
+              placeholder="your@email.com" 
+              required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input 
+              type="text" 
+              id="subject" 
+              name="subject" 
+              [(ngModel)]="contactForm.subject" 
+              placeholder="Project inquiry" 
+              required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              [(ngModel)]="contactForm.message" 
+              placeholder="Tell me about your project..." 
+              rows="5" 
+              required></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

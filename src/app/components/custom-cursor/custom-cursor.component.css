@@ -1,0 +1,49 @@
+/* src/app/components/custom-cursor/custom-cursor.component.css */
+.custom-cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--cursor-color, #0984e3);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor.pointer {
+  transform: translate(-50%, -50%) scale(1.5);
+  background: rgba(9, 132, 227, 0.5);
+}
+
+.cursor-follower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--cursor-color, #0984e3);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.3s ease, transform 0.1s ease;
+  transform: translate(-50%, -50%);
+}
+
+.cursor-follower.pointer {
+  transform: translate(-50%, -50%) scale(1.5);
+  border-width: 2px;
+  background: rgba(9, 132, 227, 0.1);
+}
+
+.hidden {
+  opacity: 0;
+}
+
+/* Light theme cursor colors */
+:root.light-theme {
+  --cursor-color: #0984e3;
+}
+
+/* Dark theme cursor colors */
+:root.dark-theme {
+  --cursor-color: #74b9ff;
+}

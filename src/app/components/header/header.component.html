@@ -1,0 +1,47 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <div class="container">
+    <a routerLink="/" class="logo">Adam Dono</a>
+
+    <!-- Desktop Navigation -->
+    @if (!isMobileView) {
+      <nav class="desktop-nav">
+        <ul class="nav-list">
+          @for (item of navItems; track item.path) {
+            <li class="nav-item">
+              <a (click)="scrollTo(item.path)"
+                 [class.active]="activeSection === item.path">
+                {{ item.label }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+    }
+
+    <!-- Mobile Navigation Toggle -->
+    @if (isMobileView) {
+      <button class="mobile-toggle"
+              (click)="toggleMobileMenu()"
+              [attr.aria-expanded]="isMobileMenuOpen"
+              aria-label="Toggle navigation">
+        <span class="hamburger" [class.active]="isMobileMenuOpen"></span>
+      </button>
+    }
+
+    <!-- Mobile Navigation Menu -->
+    @if (isMobileView) {
+      <nav class="mobile-nav" [class.open]="isMobileMenuOpen">
+        <ul class="mobile-nav-list">
+          @for (item of navItems; track item.path) {
+            <li class="mobile-nav-item">
+              <a (click)="scrollTo(item.path)"
+                 [class.active]="activeSection === item.path">
+                {{ item.label }}
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+    }
+  </div>
+</header>

@@ -1,0 +1,16 @@
+<!-- src/app/components/custom-cursor/custom-cursor.component.html -->
+<div 
+  class="custom-cursor"
+  [class.pointer]="isPointer"
+  [class.cursor-hidden]="isHidden"
+  [style.left.px]="cursorFollowX"
+  [style.top.px]="cursorFollowY">
+</div>
+
+<div 
+  class="cursor-follower"
+  [class.pointer]="isPointer"
+  [class.cursor-hidden]="isHidden"
+  [style.left.px]="cursorFollowX"
+  [style.top.px]="cursorFollowY">
+</div>

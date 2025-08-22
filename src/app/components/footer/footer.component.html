@@ -1,0 +1,12 @@
+<footer class="footer">
+  <div class="footer-content">
+    <div class="social-links">
+      @for (link of socialLinks; track link.url) {
+        <a [href]="link.url" target="_blank" rel="noopener">
+          <i [class]="link.icon"></i>
+        </a>
+      }
+    </div>
+    <p class="copyright">© {{ currentYear }} Adam Dono. All rights reserved.</p>
+  </div>
+</footer>

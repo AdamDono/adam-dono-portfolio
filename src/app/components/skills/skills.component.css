@@ -1,0 +1,435 @@
+.skills-section {
+  padding: 100px 2rem;
+  background: #f8f9fa;
+  position: relative;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #2d3436;
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
+      border-radius: 2px;
+    }
+  }
+
+  .skills-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #636e72;
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  .skill-category {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #2d3436;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e9ecef;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 40px;
+        height: 2px;
+        background: linear-gradient(135deg, #00cec9 0%, #00b894 100%);
+      }
+    }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .skill-item {
+      .skill-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+
+        .skill-name-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 0.8rem;
+
+          .skill-icon {
+            font-size: 1.2rem;
+            width: 24px;
+            text-align: center;
+            color: #494a4b;
+          }
+
+          .skill-name {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2d3436;
+          }
+        }
+
+        .skill-percentage {
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #67696a;
+        }
+      }
+
+      .skill-bar {
+        width: 100%;
+        height: 8px;
+        background: #e9ecef;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+
+        .skill-progress {
+          height: 100%;
+          background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
+          border-radius: 10px;
+          position: relative;
+          transition: width 1.5s ease-in-out;
+          transform-origin: left;
+
+          &::after {
+            content: attr(data-percentage)'%';
+            position: absolute;
+            right: 10px;
+            top: -25px;
+            background: #0984e3;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            right: 15px;
+            top: -7px;
+            width: 8px;
+            height: 8px;
+            background: #0984e3;
+            transform: rotate(45deg);
+            opacity: 0;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+
+      &:hover {
+        .skill-progress {
+          &::after,
+          &::before {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Animation for skill bars when they come into view */
+.skill-progress {
+  animation: fillBar 1.5s ease-in-out forwards;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0% !important;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .skills-section {
+    padding: 80px 2rem;
+
+    .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-category {
+      padding: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 60px 1.5rem;
+
+    .section-title {
+      font-size: 2.5rem;
+    }
+
+    .skills-intro {
+      font-size: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .skill-category {
+      padding: 1.5rem;
+
+      .category-title {
+        font-size: 1.3rem;
+      }
+
+      .skill-item {
+        .skill-header {
+          .skill-name-wrapper {
+            .skill-name {
+              font-size: 0.95rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section {
+    padding: 50px 1rem;
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .skills-intro {
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .skill-category {
+      padding: 1.2rem;
+
+      .category-title {
+        font-size: 1.2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .skills-list {
+        gap: 1rem;
+      }
+
+      .skill-item {
+        .skill-header {
+          margin-bottom: 0.4rem;
+
+          .skill-name-wrapper {
+            .skill-icon {
+              font-size: 1.1rem;
+              width: 22px;
+            }
+
+            .skill-name {
+              font-size: 0.9rem;
+            }
+          }
+
+          .skill-percentage {
+            font-size: 0.85rem;
+          }
+        }
+
+        .skill-bar {
+          height: 6px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .skills-section {
+    padding: 40px 0.5rem;
+
+    .section-title {
+      font-size: 1.8rem;
+    }
+
+    .skill-category {
+      padding: 1rem;
+    }
+  }
+}
+
+
+
+/* design-process.component.css */
+
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.process-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #636e72;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.process-step {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.process-step h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.process-step h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: #0984e3;
+  border-radius: 2px;
+}
+
+.process-step p {
+  font-size: 1rem;
+  color: #636e72;
+  line-height: 1.6;
+}
+
+.made-in-bri {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.made-in-bri p {
+  font-weight: 600;
+  color: #2d3436;
+  letter-spacing: 1px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .design-process-section {
+    padding: 60px 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .process-step {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .design-process-section {
+    padding: 50px 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .process-subtitle {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .process-step {
+    padding: 1.2rem;
+  }
+  
+  .process-step h3 {
+    font-size: 1.3rem;
+  }
+}
