@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+      "build:render": "ng build --configuration production && cp static.json dist/adam-dono-portfolio/browser/",
+    "test": "ng test",
+    "serve:render": "npx http-server dist/adam-dono-portfolio/browser -p $PORT"
+    
   },
   "private": true,
   "dependencies": {

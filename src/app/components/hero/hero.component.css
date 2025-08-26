@@ -23,8 +23,8 @@
       animation: float 15s infinite ease-in-out;
 
       &.circle-1 {
-        width: 80px;
-        height: 80px;
+        width: 25px;
+        height: 25px;
         background: linear-gradient(135deg, #74b9ff 0%, #0984e3 50%);
         top: 20%;
         left: 10%;
@@ -32,15 +32,18 @@
         animation-duration: 20s;
       }
 
+
       &.circle-2 {
-        width: 60px;
-        height: 60px;
+        width: 20px;
+        height: 20px;
         background: linear-gradient(135deg, #fd79a8 0%, #e84393 50%);
         top: 60%;
         left: 5%;
         animation-delay: 2s;
         animation-duration: 18s;
       }
+
+      
 
       &.circle-3 {
         width: 100px;
