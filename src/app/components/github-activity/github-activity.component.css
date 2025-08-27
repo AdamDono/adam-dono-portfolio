@@ -1,0 +1,58 @@
+.github-activity {
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  margin: 2rem 0;
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  background: var(--bg-primary);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-primary);
+}
+
+.activity-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: var(--accent-primary);
+}
+
+.activity-details {
+  flex: 1;
+}
+
+.activity-type {
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.activity-repo {
+  margin: 0.2rem 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.activity-date {
+  margin: 0;
+  color: var(--text-tertiary);
+  font-size: 0.8rem;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.loading, .no-activity {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+}

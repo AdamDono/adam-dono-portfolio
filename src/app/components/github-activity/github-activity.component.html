@@ -1,0 +1,28 @@
+<section class="github-activity">
+  <h2>Recent GitHub Activity</h2>
+  
+  @if (isLoading) {
+    <div class="loading">Loading GitHub activity...</div>
+  }
+  
+  @if (!isLoading && recentActivity.length === 0) {
+    <div class="no-activity">No recent activity found</div>
+  }
+  
+  @for (event of recentActivity; track event.id) {
+    <div class="activity-item">
+      <div class="activity-icon">
+        <i [class]="getEventIcon(event.type)"></i>
+      </div>
+      <div class="activity-details">
+        <p class="activity-type">{{ event.type }}</p>
+        <p class="activity-repo">{{ event.repo.name }}</p>
+        <p class="activity-date">{{ formatDate(event.created_at) }}</p>
+      </div>
+    </div>
+  }
+  
+  <a href="https://github.com/AdamDono" target="_blank" class="github-link">
+    View Full GitHub Profile →
+  </a>
+</section>

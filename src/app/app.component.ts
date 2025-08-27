@@ -1,14 +1,15 @@
 // src/app/app.component.ts
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
-import { HeroComponent } from './components/hero/hero.component';
+import { Component } from '@angular/core';
 import { AboutComponent } from './components/about/about.component';
-import { ServicesComponent } from './components/services/services.component';
-import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { SkillsComponent } from './components/skills/skills.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { ServicesComponent } from './components/services/services.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { GithubActivityComponent } from './components/github-activity/github-activity.component';
 
 
 @Component({
@@ -24,6 +25,7 @@ import { FooterComponent } from './components/footer/footer.component';
     SkillsComponent,
     ContactComponent,
     FooterComponent,
+    GithubActivityComponent
   
   ],
   templateUrl: './app.component.html',

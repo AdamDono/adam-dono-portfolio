@@ -1,6 +1,6 @@
 <header class="header" [class.scrolled]="isScrolled">
   <div class="container">
-    <a routerLink="/" class="logo">Adam Dono</a>
+    <a href="#" class="logo" (click)="scrollTo('home'); $event.preventDefault()">Adam Dono</a>
 
     <!-- Desktop Navigation -->
     @if (!isMobileView) {
