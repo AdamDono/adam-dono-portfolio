@@ -1,3 +1,4 @@
+<!-- skills.html -->
 <section id="skills" class="skills-section">
   <div class="container">
     <h2 class="section-title">Skills & Expertise</h2>
@@ -12,21 +13,10 @@
           <div class="skills-list">
             @for (skill of category.skills; track skill.name) {
               <div class="skill-item">
-                <div class="skill-header">
-                  <div class="skill-name-wrapper">
-                    <i class="skill-icon {{ skill.icon }}"></i>
-                    <span class="skill-name">{{ skill.name }}</span>
-                  </div>
-                  <span class="skill-percentage">{{ skill.percentage }}%</span>
+                <div class="skill-icon-wrapper">
+                  <i class="skill-icon {{ skill.icon }}"></i>
                 </div>
-                
-                <div class="skill-bar">
-                  <div 
-                    class="skill-progress" 
-                    [style.width.%]="skill.percentage"
-                    [attr.data-percentage]="skill.percentage">
-                  </div>
-                </div>
+                <span class="skill-name">{{ skill.name }}</span>
               </div>
             }
           </div>
@@ -34,9 +24,9 @@
       }
     </div>
   </div>
+</section>
 
-
-<!-- design-process.component.html -->
+<!-- design-process.component.html remains unchanged as per your instructions -->
 <section class="design-process-section">
   <div class="container">
     <h2 class="section-title">My Design Process</h2>
@@ -64,11 +54,5 @@
         <p>Continuous improvement based on user feedback</p>
       </div>
     </div>
-    
-  
   </div>
-</section>
-
-
-
 </section>

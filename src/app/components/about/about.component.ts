@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-  aboutText = `I'm a passionate UI/UX designer and developer with a love for creating digital experiences that not only look beautiful but also solve real problems for users and businesses.
-
-My expertise spans across user research, interaction design, visual design, and front-end development. I believe in the power of design thinking and user-centered approach to create products that truly make a difference.`;
+  aboutText = `I’m a passionate full stack developer & UI/UX designer with a love for creating digital experiences that not only look beautiful but also solve real-world problems.
+  
+  My expertise spans user research, interaction and visual design, front-end development, and backend systems. With a user-centered mindset and strong technical foundation, I bring designs to life through intuitive interfaces, scalable architectures, and seamless functionality.`;
 
   stats = [
     { number: '3+', label: 'Years Experience' },
@@ -21,6 +21,11 @@ My expertise spans across user research, interaction design, visual design, and 
     { title: 'UI/UX Design', description: 'Creating intuitive and beautiful user interfaces' },
     { title: 'Prototyping', description: 'Building interactive prototypes to test ideas' },
     { title: 'User Research', description: 'Understanding user needs and behaviors' },
-    { title: 'Frontend Development', description: 'Turning designs into functional code' }
+    { title: 'Frontend Development', description: 'Turning designs into functional code' },
+     { 
+  title: "Backend Development", 
+  description: "Designing APIs, managing databases, and ensuring secure and efficient server-side logic." 
+}
+
   ];
 }

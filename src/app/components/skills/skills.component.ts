@@ -1,3 +1,4 @@
+// skills.ts
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
@@ -14,31 +15,31 @@ export class SkillsComponent {
     {
       title: "Design Tools",
       skills: [
-        { name: "Figma", percentage: 84, icon: "fab fa-figma" },
-        { name: "Adobe Creative Suite", percentage: 90, icon: "fab fa-adobe" },
-        { name: "Sketch", percentage: 85, icon: "fab fa-sketch" },
-        { name: "Framer", percentage: 80, icon: "fas fa-cube" }
+        { name: "Figma", icon: "fab fa-figma" },
+        { name: "Adobe Creative Suite", icon: "fab fa-adobe" },
+        { name: "Sketch", icon: "fab fa-sketch" },
+        { name: "Framer", icon: "fas fa-cube" }
       ]
     },
     {
       title: "Development",
       skills: [
-        { name: "HTML/CSS", percentage: 95, icon: "fab fa-html5" },
-        { name: "JavaScript", percentage: 90, icon: "fab fa-js-square" },
-        { name: "React", percentage: 85, icon: "fab fa-react" },
-        { name: "TypeScript", percentage: 80, icon: "fas fa-code" },
-        { name: "Angular", percentage: 90, icon: "fab fa-angular" },
-        { name: "Python", percentage: 80, icon: "fab fa-python" },
-        { name: "Flask", percentage: 80, icon: "fas fa-flask" }
+        { name: "HTML/CSS", icon: "fab fa-html5" },
+        { name: "JavaScript", icon: "fab fa-js-square" },
+        { name: "React", icon: "fab fa-react" },
+        { name: "TypeScript", icon: "fas fa-code" },
+        { name: "Angular", icon: "fab fa-angular" },
+        { name: "Python", icon: "fab fa-python" },
+        { name: "Flask", icon: "fas fa-flask" }
       ]
     },
     {
       title: "Specialties",
       skills: [
-        { name: "Mobile Design", percentage: 90, icon: "fas fa-mobile-alt" },
-        { name: "Responsive Design", percentage: 85, icon: "fas fa-desktop" },
-        { name: "Design Systems", percentage: 90, icon: "fas fa-puzzle-piece" },
-        { name: "Accessibility", percentage: 85, icon: "fas fa-universal-access" }
+        { name: "Mobile Design", icon: "fas fa-mobile-alt" },
+        { name: "Responsive Design", icon: "fas fa-desktop" },
+        { name: "Design Systems", icon: "fas fa-puzzle-piece" },
+        { name: "Accessibility", icon: "fas fa-universal-access" }
       ]
     }
   ];
