@@ -13,8 +13,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 export class ContactComponent {
   contactInfo = {
     email: 'adam.dono@email.com',
-    phone: '+1 (555) 123-4567',
-    location: 'New York, NY'
+    phone: '0639249759',
+    location: 'Johannesburg, South Africa'
   };
 
   contactForm: FormGroup;
