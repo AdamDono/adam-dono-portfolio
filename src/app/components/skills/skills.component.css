@@ -1,7 +1,7 @@
 /* skills.component.css */
 .skills-section {
   padding: 100px 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Subtle gradient for depth */
+  background: linear-gradient(135deg, #f8f9fa 0%, #f3f6f8 100%); /* Subtle gradient for depth */
   position: relative;
 }
 

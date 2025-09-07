@@ -36,10 +36,10 @@ export class DataService {
     return [
       {
         id: 1,
-        title: 'E-commerce Platform',
+        title: 'E-commerce Platform (BuyMo)',
         description: 'A complete online shopping solution with intuitive product browsing and checkout flow.',
         imageUrl: 'assets/images/project1.jpg',
-        tags: ['UI Design', 'UX Research', 'Web Development'],
+        tags: [ 'Web Development'],
         link: '#',
         featured: true
       },

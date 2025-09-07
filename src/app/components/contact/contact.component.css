@@ -1,6 +1,6 @@
 .contact-section {
   padding: 100px 2rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Match skills section */
+  background: linear-gradient(135deg, #f8f9fa 0%, #f5f9fd 100%);
   position: relative;
 }
 
@@ -11,7 +11,7 @@
 
 .section-title {
   text-align: center;
-  font-size: 3rem; /* Larger for impact */
+  font-size: 3rem; 
   font-weight: 700;
   color: #2d3436;
   margin-bottom: 1.5rem;
