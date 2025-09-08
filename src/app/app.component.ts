@@ -10,13 +10,15 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ServicesComponent } from './components/services/services.component';
 import { SkillsComponent } from './components/skills/skills.component';
 import { GithubActivityComponent } from './components/github-activity/github-activity.component';
+import { ExperienceEducationComponent } from './experience-education/experience-education.component';
+
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    CommonModule, // Keep this if you need it for *ngIf, *ngFor, etc.
+    CommonModule, 
     HeaderComponent,
     HeroComponent,
     AboutComponent,
@@ -25,7 +27,8 @@ import { GithubActivityComponent } from './components/github-activity/github-act
     SkillsComponent,
     ContactComponent,
     FooterComponent,
-    GithubActivityComponent
+    GithubActivityComponent,
+    ExperienceEducationComponent,
   
   ],
   templateUrl: './app.component.html',
