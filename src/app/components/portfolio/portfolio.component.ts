@@ -72,8 +72,51 @@ export class PortfolioComponent {
       category: 'UI/UX Design',
       description: 'Personal fitness tracking app with workout plans and progress monitoring.',
       tags: ['Figma', 'WireFrame', 'Prototype '],
-      demoLink: '#',
-      codeLink: '#',
+      demoLink: 'https://www.figma.com/design/Gwve2tObvaz8X7JG0dWvEp/Portfolio-Management?node-id=0-1&t=0ROvbfUMITutOBqz-1',
+      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      featured: true
+    },
+
+            {
+      id: 6,
+      title: 'PowerRent',
+      category: 'UI/UX Design',
+      description: 'Personal fitness tracking app with workout plans and progress monitoring.',
+      tags: ['Figma', 'WireFrame', 'Prototype '],
+      demoLink: 'https://www.figma.com/design/96Xn1G5BuppT2wNgfRDyjA/PowerRent?node-id=0-1&t=866WwOQDyIAGpN2p-1',
+      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      featured: true
+    },
+
+             {
+      id: 7,
+      title: 'In-Need',
+      category: 'UI/UX Design',
+      description: 'Personal fitness tracking app with workout plans and progress monitoring.',
+      tags: ['Figma', 'WireFrame', 'Prototype '],
+      demoLink: 'https://www.figma.com/design/I4gGd7rddAv5avkhXgskz6/In-Need?node-id=50-116&t=NyJ51XDhrQlYkJHy-1',
+      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      featured: true
+    },
+
+                 {
+      id: 8,
+      title: 'Scamify',
+      category: 'UI/UX Design',
+      description: 'Personal fitness tracking app with workout plans and progress monitoring.',
+      tags: ['Figma', 'WireFrame', 'Prototype '],
+      demoLink: 'https://www.figma.com/design/HHo0du1H6aCdeI1X68gLBJ/ScamiFy?node-id=0-1&t=mvKGKFclAO1LsuAe-1',
+      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      featured: true
+    },
+
+                 {
+      id: 8,
+      title: 'Able-Wheels',
+      category: 'UI/UX Design',
+      description: 'Personal fitness tracking app with workout plans and progress monitoring.',
+      tags: ['Figma', 'WireFrame', 'Prototype '],
+      demoLink: 'https://www.figma.com/design/Z1FYO6KXCVQz1oS5CSJCEN/AbleWHeels?t=mvKGKFclAO1LsuAe-1',
       imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
