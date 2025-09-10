@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { GithubService } from '../../services/github.service';
 
@@ -20,8 +20,8 @@ export class GithubActivityComponent implements OnInit {
   tooltipPosition = { top: '0', left: '0' };
   selectedYear: number = new Date().getFullYear();
   years: number[] = [];
-  username: string = 'torvalds'; // Default username
-  intensityLevel: number = 1; // For adjusting contribution intensity
+  username: string = 'AdamDono'; // Default username
+  intensityLevel: number = 2; // For adjusting contribution intensity
 
   constructor(private githubService: GithubService) {}
 
@@ -64,7 +64,7 @@ export class GithubActivityComponent implements OnInit {
   }
 
   generateContributionSquares() {
-    const totalSquares = 364; // 52 weeks * 7 days
+    const totalSquares = 365; // 52 weeks * 7 days
     this.squares = [];
     
     // Adjust data based on selected year and intensity
