@@ -73,6 +73,6 @@ export class ExperienceEducationComponent {
 
 
 
-    // Add more as needed—reverse chronological order for best flow
+    
   ];
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  imports: [],  // Add CommonModule if @for requires it for standalone components
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
@@ -23,13 +23,13 @@ export class HeroComponent {
   }
 
   downloadCV() {
-    // Simulate CV download
-    console.log('Downloading CV...');
-    // In a real implementation, you would trigger a file download
     const link = document.createElement('a');
-    link.href = '/assets/cv-adam-dono.pdf'; // Path to your CV file
-    link.download = 'Adam-Dono-CV.pdf';
+    link.href = '/cv-adam-dono.pdf';  // Path relative to public folder
+    link.download = 'Adam-Dono-CV.pdf';  // Forces this filename on download
+    document.body.appendChild(link);
     link.click();
+    document.body.removeChild(link);
+    console.log('Downloading CV...');
   }
 
   handleButtonClick(action: string) {
