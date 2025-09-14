@@ -1,4 +1,3 @@
-// skills.ts
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 
@@ -18,7 +17,8 @@ export class SkillsComponent {
         { name: "Figma", icon: "fab fa-figma" },
         { name: "Adobe Creative Suite", icon: "fab fa-adobe" },
         { name: "Sketch", icon: "fab fa-sketch" },
-        { name: "Framer", icon: "fas fa-cube" }
+        { name: "Framer", icon: "fas fa-cube" },
+        { name: "Photoshop", icon: "fab fa-photoshop" } // Added Photoshop
       ]
     },
     {
