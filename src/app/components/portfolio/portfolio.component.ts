@@ -1,6 +1,7 @@
 // portfolio.component.ts
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Project } from '../../models/project.model';
 
 @Component({
   selector: 'app-portfolio',
@@ -13,7 +14,7 @@ export class PortfolioComponent {
   categories = ['All', 'UI/UX Design', 'Web Application'];
   selectedCategory = 'All';
 
-  projects = [
+  projects: Project[] = [
     //Web applications/ coding
     {
       id: 1,
@@ -21,8 +22,9 @@ export class PortfolioComponent {
       category: 'Web Application',
       description: 'A comprehensive mobile banking application focused on user experience and financial management.',
       tags: ['HTMl', 'CSS', 'Bootstrap', 'Python', 'Flask', 'PostgresSQL' ],
-      demoLink: '#',
-      codeLink: '#',
+      demoLink: 'https://buymo.onrender.com/',
+      codeLink: 'https://github.com/AdamDono/BuyMo',
+      videoUrl: 'BuyMoPromoVid.mov',
       imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
@@ -60,6 +62,7 @@ export class PortfolioComponent {
       tags: ['Angular', 'Bootstrap', 'Python ', 'Flask', 'PostgresSQL', 'Postman'],
       demoLink: '#',
       codeLink: '#',
+      videoUrl: 'PowerRent Screen Record.mov',
       imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
@@ -132,6 +135,18 @@ export class PortfolioComponent {
       this.filteredProjects = this.projects;
     } else {
       this.filteredProjects = this.projects.filter(project => project.category === category);
+    }
+  }
+
+  toggleFullscreen(videoElement: HTMLVideoElement) {
+    if (videoElement.requestFullscreen) {
+      videoElement.requestFullscreen();
+    } else if ((videoElement as any).webkitRequestFullscreen) {
+      (videoElement as any).webkitRequestFullscreen();
+    } else if ((videoElement as any).mozRequestFullScreen) {
+      (videoElement as any).mozRequestFullScreen();
+    } else if ((videoElement as any).msRequestFullscreen) {
+      (videoElement as any).msRequestFullscreen();
     }
   }
 }

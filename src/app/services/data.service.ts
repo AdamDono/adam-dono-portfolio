@@ -40,6 +40,7 @@ export class DataService {
         description: 'A complete online shopping solution with intuitive product browsing and checkout flow.',
         imageUrl: 'assets/images/project1.jpg',
         tags: [ 'Web Development'],
+        category: 'Web Application',
         link: '#',
         featured: true
       },
@@ -49,6 +50,7 @@ export class DataService {
         description: 'Redesigned mobile banking experience with improved navigation and transaction flows.',
         imageUrl: 'assets/images/project2.jpg',
         tags: ['Mobile UI', 'User Testing'],
+        category: 'UI/UX Design',
         link: '#'
       },
       {
@@ -57,6 +59,7 @@ export class DataService {
         description: 'Minimalist portfolio website for a photographer with focus on visual content.',
         imageUrl: 'assets/images/project3.jpg',
         tags: ['Web Design', 'Development'],
+        category: 'Web Application',
         link: '#'
       }
     ];

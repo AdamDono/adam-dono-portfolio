@@ -19,7 +19,24 @@
       @for (project of filteredProjects; track project.id) {
         <div class="project-card">
           <div class="project-image">
-            <img [src]="project.imageUrl" [alt]="project.title">
+            @if (project.videoUrl) {
+              <video 
+                #videoPlayer
+                [src]="project.videoUrl" 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                [title]="project.title"
+                [muted]="true"
+                [volume]="0">
+              </video>
+              <button class="fullscreen-btn" (click)="toggleFullscreen(videoPlayer)" title="View fullscreen">
+                <i class="fas fa-expand"></i>
+              </button>
+            } @else if (project.imageUrl) {
+              <img [src]="project.imageUrl" [alt]="project.title">
+            }
             <div class="project-category">{{ project.category }}</div>
           </div>
           
