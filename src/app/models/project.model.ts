@@ -10,4 +10,23 @@ export interface Project {
   codeLink?: string; // Optional code link
   link?: string; // Optional project link
   featured?: boolean; // Optional featured flag
+  
+  // Case Study fields
+  caseStudy?: {
+    problem: string;
+    solution: string;
+    results: string;
+    metrics?: {
+      label: string;
+      value: string;
+      icon?: string;
+    }[];
+    beforeImage?: string;
+    afterImage?: string;
+    testimonial?: {
+      quote: string;
+      author: string;
+      role: string;
+    };
+  };
 }

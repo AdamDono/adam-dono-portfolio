@@ -1,0 +1,21 @@
+<div class="loading-container {{ size }}">
+  @if (type === 'spinner') {
+    <div class="spinner">
+      <div class="spinner-ring"></div>
+      <div class="spinner-ring"></div>
+      <div class="spinner-ring"></div>
+    </div>
+  } @else if (type === 'dots') {
+    <div class="dots-loader">
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  } @else if (type === 'skeleton') {
+    <div class="skeleton-loader">
+      <div class="skeleton-line"></div>
+      <div class="skeleton-line short"></div>
+      <div class="skeleton-line"></div>
+    </div>
+  }
+</div>

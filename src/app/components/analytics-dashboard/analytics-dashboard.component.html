@@ -1,0 +1,158 @@
+<section class="analytics-dashboard">
+  <div class="container">
+    @if (!isAuthenticated) {
+      <div class="auth-container">
+        <div class="auth-card">
+          <div class="lock-icon">
+            <i class="fas fa-lock"></i>
+          </div>
+          <h2>Analytics Dashboard</h2>
+          <p>This section is password protected</p>
+          
+          <form (submit)="authenticate(); $event.preventDefault()">
+            <div class="input-group">
+              <input 
+                [type]="showPassword ? 'text' : 'password'"
+                [(ngModel)]="password"
+                name="password"
+                placeholder="Enter password"
+                class="password-input"
+                required>
+              <button 
+                type="button"
+                class="toggle-password"
+                (click)="showPassword = !showPassword">
+                <i [class]="showPassword ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+              </button>
+            </div>
+            <button type="submit" class="auth-btn">Access Dashboard</button>
+          </form>
+        </div>
+      </div>
+    } @else {
+      <div class="dashboard-header">
+        <h2 class="dashboard-title">
+          <i class="fas fa-chart-line"></i>
+          Analytics Dashboard
+        </h2>
+        <div class="header-actions">
+          <button class="btn-secondary" (click)="resetAnalytics()">
+            <i class="fas fa-redo"></i> Reset Data
+          </button>
+          <button class="btn-danger" (click)="logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </div>
+      </div>
+
+      @if (analytics) {
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue">
+              <i class="fas fa-eye"></i>
+            </div>
+            <div class="stat-content">
+              <h3>{{ analytics.totalViews }}</h3>
+              <p>Total Views</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon green">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-content">
+              <h3>{{ analytics.uniqueVisitors }}</h3>
+              <p>Unique Visitors</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon purple">
+              <i class="fas fa-folder-open"></i>
+            </div>
+            <div class="stat-content">
+              <h3>{{ Object.keys(analytics.projectViews).length }}</h3>
+              <p>Projects Viewed</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon orange">
+              <i class="fas fa-file-alt"></i>
+            </div>
+            <div class="stat-content">
+              <h3>{{ Object.keys(analytics.pageViews).length }}</h3>
+              <p>Pages Tracked</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="charts-grid">
+          <div class="chart-card">
+            <h3 class="chart-title">
+              <i class="fas fa-trophy"></i>
+              Top Projects
+            </h3>
+            <div class="top-projects-list">
+              @if (analytics.topProjects.length > 0) {
+                @for (project of analytics.topProjects; track project.id; let i = $index) {
+                  <div class="project-item">
+                    <span class="rank">{{ i + 1 }}</span>
+                    <span class="project-name">{{ project.title }}</span>
+                    <span class="project-views">
+                      <i class="fas fa-eye"></i> {{ project.views }}
+                    </span>
+                  </div>
+                }
+              } @else {
+                <p class="no-data">No project views yet</p>
+              }
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <h3 class="chart-title">
+              <i class="fas fa-calendar-alt"></i>
+              Recent Activity (Last 7 Days)
+            </h3>
+            <div class="activity-list">
+              @if (getRecentViews().length > 0) {
+                @for (day of getRecentViews(); track day.date) {
+                  <div class="activity-item">
+                    <span class="activity-date">{{ day.date }}</span>
+                    <div class="activity-bar">
+                      <div class="bar-fill" [style.width.%]="(day.views / analytics.totalViews) * 100"></div>
+                    </div>
+                    <span class="activity-count">{{ day.views }}</span>
+                  </div>
+                }
+              } @else {
+                <p class="no-data">No activity data yet</p>
+              }
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <h3 class="chart-title">
+              <i class="fas fa-file"></i>
+              Page Views
+            </h3>
+            <div class="page-views-list">
+              @if (getPageViewsArray().length > 0) {
+                @for (page of getPageViewsArray(); track page.page) {
+                  <div class="page-item">
+                    <span class="page-name">{{ page.page }}</span>
+                    <span class="page-count">{{ page.views }} views</span>
+                  </div>
+                }
+              } @else {
+                <p class="no-data">No page views yet</p>
+              }
+            </div>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</section>

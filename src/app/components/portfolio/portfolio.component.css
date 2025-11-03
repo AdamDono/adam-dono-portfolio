@@ -119,6 +119,24 @@
   letter-spacing: 0.5px;
 }
 
+.case-study-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(102, 126, 234, 0.9);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  backdrop-filter: blur(10px);
+}
+
 .fullscreen-btn {
   position: absolute;
   bottom: 1rem;
@@ -181,43 +199,69 @@
 
 .project-links {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .project-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 1rem;
   border-radius: 6px;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.case-study-link {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  flex: 1 1 100%;
+}
+
+.case-study-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
 .demo-link {
   background: #0984e3;
   color: white;
+  flex: 1;
 }
 
 .demo-link:hover {
   background: #0870c5;
+  transform: translateY(-2px);
 }
 
 .code-link {
   background: transparent;
   color: #0984e3;
   border: 1px solid #0984e3;
+  flex: 1;
 }
 
 .code-link:hover {
   background: #0984e3;
   color: white;
+  transform: translateY(-2px);
 }
 
 .link-count {
   font-size: 0.8rem;
   opacity: 0.8;
+}
+
+.loading-state {
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .made-in-bolt {

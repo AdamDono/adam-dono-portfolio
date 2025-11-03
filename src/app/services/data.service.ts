@@ -71,15 +71,29 @@ export class DataService {
         id: 1,
         author: 'Jane Smith',
         position: 'CEO, TechCorp',
-        content: 'Adam transformed our digital presence with his thoughtful designs and attention to detail.',
+        content: 'Adam transformed our digital presence with his thoughtful designs and attention to detail. His UI/UX expertise helped us increase user engagement by 45%.',
         avatarUrl: 'assets/images/avatar1.jpg'
       },
       {
         id: 2,
         author: 'Michael Johnson',
         position: 'Product Manager, InnovateCo',
-        content: 'Working with Adam was a pleasure. He delivered beyond our expectations on tight deadlines.',
+        content: 'Working with Adam was a pleasure. He delivered beyond our expectations on tight deadlines. His ability to understand complex requirements and translate them into intuitive designs is exceptional.',
         avatarUrl: 'assets/images/avatar2.jpg'
+      },
+      {
+        id: 3,
+        author: 'Sarah Williams',
+        position: 'Founder, StartupHub',
+        content: 'Adam\'s full-stack development skills combined with his design expertise made him the perfect choice for our project. He built a beautiful, performant application that our users love.',
+        avatarUrl: 'assets/images/avatar3.jpg'
+      },
+      {
+        id: 4,
+        author: 'David Chen',
+        position: 'CTO, FinanceFlow',
+        content: 'The attention to detail and user-centric approach Adam brings to every project is remarkable. Our conversion rates improved by 60% after the redesign.',
+        avatarUrl: 'assets/images/avatar4.jpg'
       }
     ];
   }

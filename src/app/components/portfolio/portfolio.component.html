@@ -15,56 +15,83 @@
       }
     </div>
     
-    <div class="portfolio-grid">
-      @for (project of filteredProjects; track project.id) {
-        <div class="project-card">
-          <div class="project-image">
-            @if (project.videoUrl) {
-              <video 
-                #videoPlayer
-                [src]="project.videoUrl" 
-                autoplay 
-                muted 
-                loop 
-                playsinline 
-                [title]="project.title"
-                [muted]="true"
-                [volume]="0">
-              </video>
-              <button class="fullscreen-btn" (click)="toggleFullscreen(videoPlayer)" title="View fullscreen">
-                <i class="fas fa-expand"></i>
-              </button>
-            } @else if (project.imageUrl) {
-              <img [src]="project.imageUrl" [alt]="project.title">
-            }
-            <div class="project-category">{{ project.category }}</div>
-          </div>
-          
-          <div class="project-content">
-            <h3 class="project-title">{{ project.title }}</h3>
-            
-            <p class="project-description">{{ project.description }}</p>
-            
-            <div class="tech-tags">
-              @for (tag of project.tags; track tag) {
-                <span class="tech-tag">{{ tag }}</span>
+    @if (isLoading) {
+      <div class="loading-state">
+        <app-loading type="spinner" size="large"></app-loading>
+      </div>
+    } @else {
+      <div class="portfolio-grid">
+        @for (project of filteredProjects; track project.id) {
+          <div class="project-card">
+            <div class="project-image">
+              @if (project.videoUrl) {
+                <video 
+                  #videoPlayer
+                  [src]="project.videoUrl" 
+                  autoplay 
+                  muted 
+                  loop 
+                  playsinline 
+                  [title]="project.title"
+                  [muted]="true"
+                  [volume]="0">
+                </video>
+                <button class="fullscreen-btn" (click)="toggleFullscreen(videoPlayer)" title="View fullscreen">
+                  <i class="fas fa-expand"></i>
+                </button>
+              } @else if (project.imageUrl) {
+                <img [src]="project.imageUrl" [alt]="project.title">
+              }
+              <div class="project-category">{{ project.category }}</div>
+              @if (project.caseStudy) {
+                <div class="case-study-badge">
+                  <i class="fas fa-file-alt"></i> Case Study
+                </div>
               }
             </div>
             
-            <div class="project-links">
-              <a [href]="project.demoLink" class="project-link demo-link">
-                <i class="fas fa-external-link-alt"></i>
-                <h4>Live Demo </h4> <span class="link-count"></span>
-              </a>
-              <a [href]="project.codeLink" class="project-link code-link">
-                <i class="fas fa-code"></i>
-                <h5>View Code</h5> <span class="link-count"></span>
-              </a>
+            <div class="project-content">
+              <h3 class="project-title">{{ project.title }}</h3>
+              
+              <p class="project-description">{{ project.description }}</p>
+              
+              <div class="tech-tags">
+                @for (tag of project.tags; track tag) {
+                  <span class="tech-tag">{{ tag }}</span>
+                }
+              </div>
+              
+              <div class="project-links">
+                @if (project.caseStudy) {
+                  <button (click)="openCaseStudy(project)" class="project-link case-study-link">
+                    <i class="fas fa-book-open"></i>
+                    <span>View Case Study</span>
+                  </button>
+                }
+                <a [href]="project.demoLink" class="project-link demo-link">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Live Demo</span>
+                </a>
+                @if (project.codeLink && project.codeLink !== '#') {
+                  <a [href]="project.codeLink" class="project-link code-link">
+                    <i class="fas fa-code"></i>
+                    <span>View Code</span>
+                  </a>
+                }
+              </div>
             </div>
           </div>
-        </div>
-      }
-    </div>
+        }
+      </div>
+    }
   
   </div>
+  
+  <!-- Case Study Modal -->
+  @if (selectedProject) {
+    <app-case-study-modal 
+      [project]="selectedProject" 
+      (close)="closeCaseStudy()">
+    </app-case-study-modal>
+  }
 </section>
