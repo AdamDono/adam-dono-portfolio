@@ -2,14 +2,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../../models/project.model';
+import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
 import { CaseStudyModalComponent } from '../case-study-modal/case-study-modal.component';
 import { LoadingComponent } from '../loading/loading.component';
-import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, CaseStudyModalComponent, LoadingComponent],
+  imports: [CommonModule, CaseStudyModalComponent, LoadingComponent, SafeUrlPipe],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.css']
 })
@@ -29,7 +29,7 @@ export class PortfolioComponent implements OnInit {
       tags: ['HTMl', 'CSS', 'Bootstrap', 'Python', 'Flask', 'PostgresSQL' ],
       demoLink: 'https://buymo.onrender.com/',
       codeLink: 'https://github.com/AdamDono/BuyMo',
-      videoUrl: 'BuyMoPromoVid.mov',
+      youtubeUrl: 'https://www.youtube.com/embed/OEtk27KLCSs?autoplay=1&mute=1&loop=1&playlist=OEtk27KLCSs',
       imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
@@ -39,6 +39,7 @@ export class PortfolioComponent implements OnInit {
       category: 'Web Application',
       description: 'Sustainable shopping platform with focus on eco-friendly products and carbon footprint tracking.',
       tags: ['Angular', 'Typescript', 'Bootstrap', 'Render', 'API'],
+      youtubeUrl: 'https://www.youtube.com/embed/gG6g58LUiXA?autoplay=1&mute=1&loop=1&playlist=gG6g58LUiXA',
       demoLink: '#',
       codeLink: '#',
       imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
@@ -67,7 +68,7 @@ export class PortfolioComponent implements OnInit {
       tags: ['Angular', 'Bootstrap', 'Python ', 'Flask', 'PostgresSQL', 'Postman'],
       demoLink: '#',
       codeLink: '#',
-      videoUrl: 'PowerRent Screen Record.mov',
+      youtubeUrl: 'https://www.youtube.com/embed/yNtJ8E_1uLE?autoplay=1&mute=1&loop=1&playlist=yNtJ8E_1uLE',
       imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
@@ -168,16 +169,11 @@ export class PortfolioComponent implements OnInit {
 
   filteredProjects = this.projects;
 
-  constructor(private analyticsService: AnalyticsService) {}
-
   ngOnInit() {
     // Simulate loading
     setTimeout(() => {
       this.isLoading = false;
     }, 800);
-    
-    // Track page view
-    this.analyticsService.trackPageView('portfolio');
   }
 
   filterProjects(category: string) {
@@ -204,8 +200,6 @@ export class PortfolioComponent implements OnInit {
   openCaseStudy(project: Project) {
     if (project.caseStudy) {
       this.selectedProject = project;
-      // Track project view
-      this.analyticsService.trackProjectView(project.id, project.title);
     }
   }
 

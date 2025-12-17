@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
-export class HeroComponent {
+export class HeroComponent implements OnInit, OnDestroy {
   title = "UI/UX Designer & Developer";
   subtitle = "crafting exceptional digital experiences that users love";
   description = "With over 3+ years of experience, I specialize in creating beautiful, functional, and user-centered designs that drive business results.";
@@ -14,6 +14,53 @@ export class HeroComponent {
     { text: 'View My Work', action: 'scrollToPortfolio', class: 'primary' },
     { text: 'Download CV', action: 'downloadCV', class: 'secondary' }
   ];
+
+  // Typing animation properties
+  typedText = '';
+  private textToType = "UI/UX Designer & Developer";
+  private typingSpeed = 100; // milliseconds per character
+  private deletingSpeed = 50;
+  private pauseTime = 2000; // pause before deleting
+  private typingInterval: any;
+  private isDeleting = false;
+  private charIndex = 0;
+
+  ngOnInit() {
+    this.startTypingAnimation();
+  }
+
+  ngOnDestroy() {
+    if (this.typingInterval) {
+      clearTimeout(this.typingInterval);
+    }
+  }
+
+  private startTypingAnimation() {
+    const type = () => {
+      if (!this.isDeleting && this.charIndex < this.textToType.length) {
+        // Typing
+        this.typedText = this.textToType.substring(0, this.charIndex + 1);
+        this.charIndex++;
+        this.typingInterval = setTimeout(type, this.typingSpeed);
+      } else if (!this.isDeleting && this.charIndex === this.textToType.length) {
+        // Pause before deleting
+        this.typingInterval = setTimeout(() => {
+          this.isDeleting = true;
+          type();
+        }, this.pauseTime);
+      } else if (this.isDeleting && this.charIndex > 0) {
+        // Deleting
+        this.charIndex--;
+        this.typedText = this.textToType.substring(0, this.charIndex);
+        this.typingInterval = setTimeout(type, this.deletingSpeed);
+      } else if (this.isDeleting && this.charIndex === 0) {
+        // Start typing again
+        this.isDeleting = false;
+        this.typingInterval = setTimeout(type, 500);
+      }
+    };
+    type();
+  }
 
   scrollToPortfolio() {
     const portfolioSection = document.getElementById('portfolio');

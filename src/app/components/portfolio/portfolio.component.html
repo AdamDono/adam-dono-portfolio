@@ -24,7 +24,15 @@
         @for (project of filteredProjects; track project.id) {
           <div class="project-card">
             <div class="project-image">
-              @if (project.videoUrl) {
+              @if (project.youtubeUrl) {
+                <iframe
+                  [src]="project.youtubeUrl | safeUrl"
+                  title="{{ project.title }} promo video"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen>
+                </iframe>
+              } @else if (project.videoUrl) {
                 <video 
                   #videoPlayer
                   [src]="project.videoUrl" 

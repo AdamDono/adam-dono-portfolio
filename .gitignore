@@ -46,3 +46,11 @@ Thumbs.db
 .github/instructions/codacy.instructions.md
 *.mov
 *.mp4
+
+
+#Ignore cursor AI rules
+.cursor/rules/codacy.mdc
+
+# Markdown and course files
+*.md
+*.courso

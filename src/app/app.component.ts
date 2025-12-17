@@ -1,7 +1,6 @@
 // src/app/app.component.ts
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -13,14 +12,12 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { GithubActivityComponent } from './components/github-activity/github-activity.component';
 import { ExperienceEducationComponent } from './experience-education/experience-education.component';
 import { ResumeComponent } from './components/resume/resume.component';
-import { AnalyticsService } from './services/analytics.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
     HeaderComponent,
     HeroComponent,
     AboutComponent,
@@ -36,15 +33,6 @@ import { AnalyticsService } from './services/analytics.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'portfolio';
-
-  constructor(private analyticsService: AnalyticsService) {}
-
-  ngOnInit() {
-    // Track unique visitor
-    this.analyticsService.trackUniqueVisitor();
-    // Track initial page view
-    this.analyticsService.trackPageView('home');
-  }
 }

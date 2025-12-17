@@ -3,7 +3,8 @@ export interface Project {
   title: string;
   description: string;
   imageUrl?: string; // Optional image URL
-  videoUrl?: string; // Optional video URL
+  videoUrl?: string; // Optional local video URL
+  youtubeUrl?: string; // Optional YouTube embed URL
   tags: string[];
   category: string; // Project category
   demoLink?: string; // Optional demo link
