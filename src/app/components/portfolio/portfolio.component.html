@@ -78,15 +78,16 @@
                 }
                 <a [href]="project.demoLink" class="project-link demo-link">
                   <i class="fas fa-external-link-alt"></i>
-                  <span>Live Demo</span>
+                  <span>{{ project.category === 'UI/UX Design' ? 'Live Prototype' : 'Live Demo' }}</span>
                 </a>
-                @if (project.codeLink && project.codeLink !== '#') {
-                  <a [href]="project.codeLink" class="project-link code-link">
-                    <i class="fas fa-code"></i>
-                    <span>View Code</span>
-                  </a>
-                }
+                <a [href]="project.codeLink || project.demoLink" class="project-link code-link">
+                  <i class="fas fa-code"></i>
+                  <span>{{ project.category === 'UI/UX Design' ? 'View Figma' : 'View Code' }}</span>
+                </a>
               </div>
+              @if (project.privateRepo) {
+                <p class="link-count">Code is hosted in a private repository.</p>
+              }
             </div>
           </div>
         }

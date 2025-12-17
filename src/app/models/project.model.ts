@@ -11,6 +11,7 @@ export interface Project {
   codeLink?: string; // Optional code link
   link?: string; // Optional project link
   featured?: boolean; // Optional featured flag
+  privateRepo?: boolean; // Indicates code is in a private repository
   
   // Case Study fields
   caseStudy?: {

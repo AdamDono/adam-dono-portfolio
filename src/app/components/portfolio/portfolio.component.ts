@@ -29,7 +29,7 @@ export class PortfolioComponent implements OnInit {
       tags: ['HTMl', 'CSS', 'Bootstrap', 'Python', 'Flask', 'PostgresSQL' ],
       demoLink: 'https://buymo.onrender.com/',
       codeLink: 'https://github.com/AdamDono/BuyMo',
-      youtubeUrl: 'https://www.youtube.com/embed/OEtk27KLCSs?autoplay=1&mute=1&loop=1&playlist=OEtk27KLCSs',
+      youtubeUrl: 'https://www.youtube.com/embed/OEtk27KLCSs?autoplay=1&mute=1&loop=1&playlist=OEtk27KLCSs&vq=hd1080',
       imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
@@ -39,9 +39,9 @@ export class PortfolioComponent implements OnInit {
       category: 'Web Application',
       description: 'Sustainable shopping platform with focus on eco-friendly products and carbon footprint tracking.',
       tags: ['Angular', 'Typescript', 'Bootstrap', 'Render', 'API'],
-      youtubeUrl: 'https://www.youtube.com/embed/gG6g58LUiXA?autoplay=1&mute=1&loop=1&playlist=gG6g58LUiXA',
-      demoLink: '#',
-      codeLink: '#',
+      youtubeUrl: 'https://www.youtube.com/embed/gG6g58LUiXA?autoplay=1&mute=1&loop=1&playlist=gG6g58LUiXA&vq=hd1080',
+      demoLink: 'https://adamdono.github.io/movieapi/',
+      codeLink: 'https://github.com/AdamDono/movieapi',
       imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
@@ -68,9 +68,10 @@ export class PortfolioComponent implements OnInit {
       tags: ['Angular', 'Bootstrap', 'Python ', 'Flask', 'PostgresSQL', 'Postman'],
       demoLink: '#',
       codeLink: '#',
-      youtubeUrl: 'https://www.youtube.com/embed/yNtJ8E_1uLE?autoplay=1&mute=1&loop=1&playlist=yNtJ8E_1uLE',
+      youtubeUrl: 'https://www.youtube.com/embed/yNtJ8E_1uLE?autoplay=1&mute=1&loop=1&playlist=yNtJ8E_1uLE&vq=hd1080',
       imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      featured: true
+      featured: true,
+      privateRepo: true
     },
 
     //Design Projects/figma
@@ -82,6 +83,7 @@ export class PortfolioComponent implements OnInit {
       description: 'A comprehensive investment portfolio management platform designed to simplify financial tracking and decision-making.',
       tags: ['Figma', 'WireFrame', 'Prototype', 'User Research'],
       demoLink: 'https://www.figma.com/design/Gwve2tObvaz8X7JG0dWvEp/Portfolio-Management?node-id=0-1&t=0ROvbfUMITutOBqz-1',
+      codeLink: 'https://www.figma.com/design/Gwve2tObvaz8X7JG0dWvEp/Portfolio-Management?node-id=0-1&t=0ROvbfUMITutOBqz-1',
       imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true,
       caseStudy: {
@@ -111,6 +113,7 @@ export class PortfolioComponent implements OnInit {
       description: 'Personal fitness tracking app with workout plans and progress monitoring.',
       tags: ['Figma', 'WireFrame', 'Prototype '],
       demoLink: 'https://www.figma.com/design/96Xn1G5BuppT2wNgfRDyjA/PowerRent?node-id=0-1&t=866WwOQDyIAGpN2p-1',
+      codeLink: 'https://www.figma.com/design/96Xn1G5BuppT2wNgfRDyjA/PowerRent?node-id=0-1&t=866WwOQDyIAGpN2p-1',
       imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
@@ -122,6 +125,7 @@ export class PortfolioComponent implements OnInit {
       description: 'A community-driven platform connecting people in need with local volunteers and resources.',
       tags: ['Figma', 'WireFrame', 'Prototype', 'Social Impact'],
       demoLink: 'https://www.figma.com/design/I4gGd7rddAv5avkhXgskz6/In-Need?node-id=50-116&t=NyJ51XDhrQlYkJHy-1',
+      codeLink: 'https://www.figma.com/design/I4gGd7rddAv5avkhXgskz6/In-Need?node-id=50-116&t=NyJ51XDhrQlYkJHy-1',
       imageUrl: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true,
       caseStudy: {
@@ -149,6 +153,7 @@ export class PortfolioComponent implements OnInit {
       description: 'Personal fitness tracking app with workout plans and progress monitoring.',
       tags: ['Figma', 'WireFrame', 'Prototype '],
       demoLink: 'https://www.figma.com/design/HHo0du1H6aCdeI1X68gLBJ/ScamiFy?node-id=0-1&t=mvKGKFclAO1LsuAe-1',
+      codeLink: 'https://www.figma.com/design/HHo0du1H6aCdeI1X68gLBJ/ScamiFy?node-id=0-1&t=mvKGKFclAO1LsuAe-1',
       imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
@@ -160,6 +165,7 @@ export class PortfolioComponent implements OnInit {
       description: 'Personal fitness tracking app with workout plans and progress monitoring.',
       tags: ['Figma', 'WireFrame', 'Prototype '],
       demoLink: 'https://www.figma.com/design/Z1FYO6KXCVQz1oS5CSJCEN/AbleWHeels?t=mvKGKFclAO1LsuAe-1',
+      codeLink: 'https://www.figma.com/design/Z1FYO6KXCVQz1oS5CSJCEN/AbleWHeels?t=mvKGKFclAO1LsuAe-1',
       imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
