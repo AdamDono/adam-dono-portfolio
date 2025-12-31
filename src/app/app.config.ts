@@ -1,8 +1,14 @@
-import { ApplicationConfig } from '@angular/core';
 import { provideHttpClient } from '@angular/common/http';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import player from 'lottie-web';
+import { provideLottieOptions } from 'ngx-lottie';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient()
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideHttpClient(),
+    provideLottieOptions({
+      player: () => player,
+    })
   ]
 };

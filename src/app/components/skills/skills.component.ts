@@ -15,32 +15,37 @@ export class SkillsComponent {
       title: "Design Tools",
       skills: [
         { name: "Figma", icon: "fab fa-figma" },
-        { name: "Adobe Creative Suite", icon: "fab fa-adobe" },
-        { name: "Sketch", icon: "fab fa-sketch" },
-        { name: "Framer", icon: "fas fa-cube" },
-        { name: "Photoshop", icon: "fab fa-photoshop" } // Added Photoshop
+        { name: "Photoshop", icon: "fas fa-image" },
+        { name: "Illustrator", icon: "fas fa-pen-nib" },
+        { name: "Framer", icon: "fas fa-cube" }
       ]
     },
     {
       title: "Development",
       skills: [
-        { name: "HTML/CSS", icon: "fab fa-html5" },
-        { name: "JavaScript", icon: "fab fa-js-square" },
+        { name: "Angular", icon: "fab fa-angular" },
         { name: "React", icon: "fab fa-react" },
         { name: "TypeScript", icon: "fas fa-code" },
-        { name: "Angular", icon: "fab fa-angular" },
-        { name: "Python", icon: "fab fa-python" },
-        { name: "Flask", icon: "fas fa-flask" }
+        { name: "Python/Flask", icon: "fab fa-python" }
       ]
     },
     {
       title: "Specialties",
       skills: [
-        { name: "Mobile Design", icon: "fas fa-mobile-alt" },
-        { name: "Responsive Design", icon: "fas fa-desktop" },
-        { name: "Design Systems", icon: "fas fa-puzzle-piece" },
-        { name: "Accessibility", icon: "fas fa-universal-access" }
+        { name: "UI/UX", icon: "fas fa-laptop-code" },
+        { name: "Branding", icon: "fas fa-palette" },
+        { name: "Mobile", icon: "fas fa-mobile-alt" },
+        { name: "Prototyping", icon: "fas fa-bolt" },
+        { name: "Deployment", icon: "fas fa-server" },
+        { name: "Web3", icon: "fab fa-ethereum" }
       ]
     }
+  ];
+
+  designProcess = [
+    { number: '01', title: 'Discover', description: 'Deep diving into the problem space, conducting research and stakeholder interviews.' },
+    { number: '02', title: 'Define', description: 'Synthesizing insights to define core problems and user needs.' },
+    { number: '03', title: 'Design', description: 'Creating iterative wireframes and high-fidelity prototypes.' },
+    { number: '04', title: 'Deliver', description: 'Providing developer-ready assets and design specifications.' }
   ];
 }

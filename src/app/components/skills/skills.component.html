@@ -1,25 +1,36 @@
 <section id="skills" class="skills-section">
   <div class="container">
-    <h2 class="section-title">Skills & Expertise</h2>
-    
-    <p class="skills-intro">{{ introText }}</p>
-    
+    <h1 class="section-title">Skills & Expertise</h1>
     <div class="skills-grid">
       @for (category of skillCategories; track category.title) {
-        <div class="skill-category">
-          <h3 class="category-title">{{ category.title }}</h3>
-          
-          <div class="skills-list">
-            @for (skill of category.skills; track skill.name) {
-              <div class="skill-item">
-                <div class="skill-icon-wrapper">
-                  <i class="skill-icon {{ skill.icon }}"></i>
-                </div>
-                <span class="skill-name">{{ skill.name }}</span>
-              </div>
-            }
+      <div class="skill-category">
+        <h3 class="category-title">{{ category.title }}</h3>
+        <div class="skills-list">
+          @for (skill of category.skills; track skill.name) {
+          <div class="skill-item">
+            <div class="skill-icon-wrapper">
+              <i class="{{skill.icon}} skill-icon"></i>
+            </div>
+            <span class="skill-name">{{ skill.name }}</span>
           </div>
+          }
         </div>
+      </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="design-process-section">
+  <div class="container">
+    <h1 class="section-title">Design Process</h1>
+    <div class="process-steps">
+      @for (step of designProcess; track step.number) {
+      <div class="process-step">
+        <span class="step-number">{{ step.number }}</span>
+        <h3>{{ step.title }}</h3>
+        <p>{{ step.description }}</p>
+      </div>
       }
     </div>
   </div>

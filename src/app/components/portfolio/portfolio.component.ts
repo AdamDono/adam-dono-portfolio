@@ -1,15 +1,15 @@
 // portfolio.component.ts
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Project } from '../../models/project.model';
-import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
 import { CaseStudyModalComponent } from '../case-study-modal/case-study-modal.component';
 import { LoadingComponent } from '../loading/loading.component';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, CaseStudyModalComponent, LoadingComponent, SafeUrlPipe],
+  imports: [CommonModule, LoadingComponent, CaseStudyModalComponent],
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.css']
 })
@@ -19,164 +19,100 @@ export class PortfolioComponent implements OnInit {
   isLoading = true;
   selectedProject: Project | null = null;
 
+  constructor(private sanitizer: DomSanitizer) { }
+
   projects: Project[] = [
-    //Web applications/ coding
     {
       id: 1,
-      title: 'BuyMo - E-commerce Platform',
+      title: 'BuyMo E-commerce',
       category: 'Web Application',
-      description: 'A comprehensive mobile banking application focused on user experience and financial management.',
-      tags: ['HTMl', 'CSS', 'Bootstrap', 'Python', 'Flask', 'PostgresSQL' ],
+      description: 'A comprehensive e-commerce platform with dynamic product management and secure checkout.',
+      tags: ['Angular', 'Python', 'Flask', 'PostgreSQL'],
+      videoUrl: 'https://youtu.be/OEtk27KLCSs?si=0NkO96RAkB1pvmyl',
+      imageUrl: '/profile-pic.jpg',
       demoLink: 'https://buymo.onrender.com/',
       codeLink: 'https://github.com/AdamDono/BuyMo',
-      youtubeUrl: 'https://www.youtube.com/embed/OEtk27KLCSs?autoplay=1&mute=1&loop=1&playlist=OEtk27KLCSs&vq=hd1080',
-      imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
     {
       id: 2,
-      title: 'MovieBuddy - Movie Application',
+      title: 'MovieBuddy App',
       category: 'Web Application',
-      description: 'Sustainable shopping platform with focus on eco-friendly products and carbon footprint tracking.',
-      tags: ['Angular', 'Typescript', 'Bootstrap', 'Render', 'API'],
-      youtubeUrl: 'https://www.youtube.com/embed/gG6g58LUiXA?autoplay=1&mute=1&loop=1&playlist=gG6g58LUiXA&vq=hd1080',
-      demoLink: 'https://adamdono.github.io/movieapi/',
+      description: 'Interactive movie discovery platform with real-time API integrations.',
+      tags: ['Angular', 'TypeScript', 'Bootstrap', 'API'],
+      videoUrl: 'https://youtu.be/gG6g58LUiXA?si=3HQtg5IAAsgEW8EI',
+      imageUrl: '/profile-pic.jpg',
+      demoLink: 'https://movieapi-q0fn.onrender.com/',
       codeLink: 'https://github.com/AdamDono/movieapi',
-      imageUrl: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true
     },
-
-
-
-   
     {
       id: 3,
-      title: 'Pace Academy - LMS',
+      title: 'PowerRent Application',
       category: 'Web Application',
-      description: 'Personal fitness tracking app with workout plans and progress monitoring.',
-      tags: ['HTML', 'CSS', 'Bootstrap', 'Python ', 'Flask', 'PostgresSQL', 'Postman'],
-      demoLink: '#',
+      description: 'High-performance equipment rental platform for seamless business operations.',
+      tags: ['Angular', 'Bootstrap', 'Flask', 'Postman'],
+      videoUrl: 'https://youtu.be/yNtJ8E_1uLE?si=6S6XFRuzPlYl8Dj5',
+      imageUrl: '/profile-pic.jpg',
+      demoLink: 'https://youtu.be/yNtJ8E_1uLE?si=6S6XFRuzPlYl8Dj5',
       codeLink: '#',
-      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      featured: true
-    },
-        {
-      id: 4,
-      title: 'PowerRent - Rental Application',
-      category: 'Web Application',
-      description: 'Personal fitness tracking app with workout plans and progress monitoring.',
-      tags: ['Angular', 'Bootstrap', 'Python ', 'Flask', 'PostgresSQL', 'Postman'],
-      demoLink: '#',
-      codeLink: '#',
-      youtubeUrl: 'https://www.youtube.com/embed/yNtJ8E_1uLE?autoplay=1&mute=1&loop=1&playlist=yNtJ8E_1uLE&vq=hd1080',
-      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
       featured: true,
       privateRepo: true
     },
-
-    //Design Projects/figma
-
-         {
+    {
+      id: 4,
+      title: 'Pacedebt',
+      category: 'Web Application',
+      description: 'Debt management and financial planning platform for personal finance tracking.',
+      tags: ['Angular', 'TypeScript', 'Firebase', 'Material UI'],
+      imageUrl: '/profile-pic.jpg',
+      demoLink: 'https://pacedebt.onrender.com/login',
+      codeLink: 'https://github.com/AdamDono/pacedebt',  // Update with actual repo link
+      featured: true
+    },
+    {
       id: 5,
-      title: 'Portfolio Management System',
+      title: 'Portfolio Management',
       category: 'UI/UX Design',
-      description: 'A comprehensive investment portfolio management platform designed to simplify financial tracking and decision-making.',
-      tags: ['Figma', 'WireFrame', 'Prototype', 'User Research'],
-      demoLink: 'https://www.figma.com/design/Gwve2tObvaz8X7JG0dWvEp/Portfolio-Management?node-id=0-1&t=0ROvbfUMITutOBqz-1',
-      codeLink: 'https://www.figma.com/design/Gwve2tObvaz8X7JG0dWvEp/Portfolio-Management?node-id=0-1&t=0ROvbfUMITutOBqz-1',
-      imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      description: 'Unified dashboard for financial asset tracking and performance analysis.',
+      tags: ['Figma', 'WireFrame', 'Prototype', 'UX Research'],
+      imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+      demoLink: 'https://www.figma.com/design/Gwve2tObvaz8X7JG0dWvEp/Portfolio-Management',
       featured: true,
       caseStudy: {
-        problem: 'Investment firms struggled with fragmented portfolio management tools that required multiple platforms to track assets, analyze performance, and generate reports. Users found existing solutions overwhelming with cluttered interfaces and steep learning curves, leading to poor adoption rates and inefficient workflows.',
-        solution: 'Designed an intuitive, unified portfolio management system with a clean dashboard that consolidates all critical information. Implemented a card-based layout for easy scanning, interactive charts for performance visualization, and a streamlined workflow for adding and managing investments. Conducted extensive user testing with financial advisors to refine the interface.',
-        results: 'The redesigned platform significantly improved user experience and operational efficiency. Users reported completing tasks 50% faster, and the intuitive interface reduced onboarding time from 2 weeks to 3 days. The platform received positive feedback for its clarity and ease of use.',
+        problem: 'Investment firms struggled with fragmented tools and cluttered interfaces.',
+        solution: 'Designed a unified system with interactive charts and streamlined workflows.',
+        results: 'Task completion time reduced by 50% and onboarding time cut by 85%.',
         metrics: [
-          { label: 'User Engagement', value: '+40%', icon: 'fas fa-users' },
-          { label: 'Task Completion Time', value: '-50%', icon: 'fas fa-clock' },
-          { label: 'User Satisfaction', value: '4.8/5', icon: 'fas fa-star' },
-          { label: 'Onboarding Time', value: '-85%', icon: 'fas fa-rocket' }
-        ],
-        beforeImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        afterImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        testimonial: {
-          quote: 'The new portfolio management system has transformed how our team works. What used to take hours now takes minutes, and our clients love the clarity of the reports.',
-          author: 'Jennifer Martinez',
-          role: 'Senior Financial Advisor'
-        }
+          { label: 'Workload', value: '-50%', icon: 'ph-clock' },
+          { label: 'Satisfaction', value: '4.8/5', icon: 'ph-star' }
+        ]
       }
     },
-
-            {
+    {
       id: 6,
-      title: 'PowerRent',
+      title: 'In-Need App',
       category: 'UI/UX Design',
-      description: 'Personal fitness tracking app with workout plans and progress monitoring.',
-      tags: ['Figma', 'WireFrame', 'Prototype '],
-      demoLink: 'https://www.figma.com/design/96Xn1G5BuppT2wNgfRDyjA/PowerRent?node-id=0-1&t=866WwOQDyIAGpN2p-1',
-      codeLink: 'https://www.figma.com/design/96Xn1G5BuppT2wNgfRDyjA/PowerRent?node-id=0-1&t=866WwOQDyIAGpN2p-1',
-      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      featured: true
-    },
-
-             {
-      id: 7,
-      title: 'In-Need',
-      category: 'UI/UX Design',
-      description: 'A community-driven platform connecting people in need with local volunteers and resources.',
-      tags: ['Figma', 'WireFrame', 'Prototype', 'Social Impact'],
-      demoLink: 'https://www.figma.com/design/I4gGd7rddAv5avkhXgskz6/In-Need?node-id=50-116&t=NyJ51XDhrQlYkJHy-1',
-      codeLink: 'https://www.figma.com/design/I4gGd7rddAv5avkhXgskz6/In-Need?node-id=50-116&t=NyJ51XDhrQlYkJHy-1',
-      imageUrl: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      description: 'Community-driven platform connecting volunteers with local needs.',
+      tags: ['Figma', 'Mobile UI', 'Social Impact'],
+      imageUrl: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80',
+      demoLink: 'https://www.figma.com/design/I4gGd7rddAv5avkhXgskz6/In-Need',
       featured: true,
       caseStudy: {
-        problem: 'Community members in need often struggled to find local help, while volunteers had no centralized way to discover opportunities. Existing platforms were either too complex, lacked local focus, or had trust and safety concerns that prevented widespread adoption.',
-        solution: 'Created a mobile-first platform with location-based matching, verified user profiles, and an intuitive request/offer system. Implemented clear categories for different types of needs (food, transportation, skills, etc.), real-time notifications, and an in-app messaging system. Designed with accessibility in mind to ensure the platform serves all community members.',
-        results: 'The platform successfully connected thousands of community members, facilitating meaningful local connections. The simple, trust-focused design led to high engagement rates and positive community impact.',
+        problem: 'Lack of centralized platform for local community aid and volunteer matching.',
+        solution: 'Mobile-first platform with location matching and verified profiles.',
+        results: 'Over 5,000 active users and 2,500+ successful connections.',
         metrics: [
-          { label: 'Active Users', value: '5,000+', icon: 'fas fa-users' },
-          { label: 'Successful Connections', value: '2,500+', icon: 'fas fa-handshake' },
-          { label: 'User Retention', value: '78%', icon: 'fas fa-chart-line' },
-          { label: 'Average Response Time', value: '< 2hrs', icon: 'fas fa-clock' }
-        ],
-        testimonial: {
-          quote: 'In-Need has transformed our community. The design makes it so easy to help neighbors in need, and the trust features give everyone peace of mind.',
-          author: 'Marcus Thompson',
-          role: 'Community Organizer'
-        }
+          { label: 'Users', value: '5k+', icon: 'ph-users' },
+          { label: 'Impact', value: 'High', icon: 'ph-heart' }
+        ]
       }
-    },
-
-                 {
-      id: 8,
-      title: 'Scamify',
-      category: 'UI/UX Design',
-      description: 'Personal fitness tracking app with workout plans and progress monitoring.',
-      tags: ['Figma', 'WireFrame', 'Prototype '],
-      demoLink: 'https://www.figma.com/design/HHo0du1H6aCdeI1X68gLBJ/ScamiFy?node-id=0-1&t=mvKGKFclAO1LsuAe-1',
-      codeLink: 'https://www.figma.com/design/HHo0du1H6aCdeI1X68gLBJ/ScamiFy?node-id=0-1&t=mvKGKFclAO1LsuAe-1',
-      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      featured: true
-    },
-
-                 {
-      id: 8,
-      title: 'Able-Wheels',
-      category: 'UI/UX Design',
-      description: 'Personal fitness tracking app with workout plans and progress monitoring.',
-      tags: ['Figma', 'WireFrame', 'Prototype '],
-      demoLink: 'https://www.figma.com/design/Z1FYO6KXCVQz1oS5CSJCEN/AbleWHeels?t=mvKGKFclAO1LsuAe-1',
-      codeLink: 'https://www.figma.com/design/Z1FYO6KXCVQz1oS5CSJCEN/AbleWHeels?t=mvKGKFclAO1LsuAe-1',
-      imageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-      featured: true
-    },
-
-    
+    }
   ];
 
   filteredProjects = this.projects;
 
   ngOnInit() {
-    // Simulate loading
     setTimeout(() => {
       this.isLoading = false;
     }, 800);
@@ -187,19 +123,7 @@ export class PortfolioComponent implements OnInit {
     if (category === 'All') {
       this.filteredProjects = this.projects;
     } else {
-      this.filteredProjects = this.projects.filter(project => project.category === category);
-    }
-  }
-
-  toggleFullscreen(videoElement: HTMLVideoElement) {
-    if (videoElement.requestFullscreen) {
-      videoElement.requestFullscreen();
-    } else if ((videoElement as any).webkitRequestFullscreen) {
-      (videoElement as any).webkitRequestFullscreen();
-    } else if ((videoElement as any).mozRequestFullScreen) {
-      (videoElement as any).mozRequestFullScreen();
-    } else if ((videoElement as any).msRequestFullscreen) {
-      (videoElement as any).msRequestFullscreen();
+      this.filteredProjects = this.projects.filter(p => p.category === category);
     }
   }
 
@@ -211,5 +135,59 @@ export class PortfolioComponent implements OnInit {
 
   closeCaseStudy() {
     this.selectedProject = null;
+  }
+
+  togglePlayPause(video: HTMLVideoElement) {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }
+
+  isVideoPlaying(video: HTMLVideoElement): boolean {
+    return !video.paused;
+  }
+
+  playVideoFullscreen(event: Event, video: HTMLVideoElement) {
+    event.stopPropagation();
+
+    // Request fullscreen
+    if (video.requestFullscreen) {
+      video.requestFullscreen().then(() => {
+        // Play video in HD after entering fullscreen
+        video.play();
+      }).catch(err => {
+        console.log('Fullscreen request failed:', err);
+        // If fullscreen fails, just play the video
+        video.play();
+      });
+    } else {
+      // Fallback: just play if fullscreen not supported
+      video.play();
+    }
+  }
+
+  isYouTubeUrl(url: string): boolean {
+    // Check for both short (youtu.be) and long (youtube.com) formats
+    return /youtu\.be\/|youtube\.com\//.test(url);
+  }
+
+  getYouTubeEmbedUrl(url: string): SafeResourceUrl {
+    let videoId = '';
+
+    // Robust regex to extract ID from various YouTube URL formats
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+
+    if (match && match[2].length === 11) {
+      videoId = match[2];
+    } else {
+      console.warn('Could not extract video ID from:', url);
+    }
+
+    // Restored exact params from reference commit: autoplay=1&mute=1&loop=1&playlist={videoId}
+    const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}`;
+    return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
   }
 }

@@ -30,7 +30,7 @@
 .lock-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -67,7 +67,7 @@
 
 .password-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #0984e3;
 }
 
 .toggle-password {
@@ -84,13 +84,13 @@
 }
 
 .toggle-password:hover {
-  color: #667eea;
+  color: #0984e3;
 }
 
 .auth-btn {
   width: 100%;
   padding: 0.875rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0984e3 0%, #74b9ff 100%);
   color: white;
   border: none;
   border-radius: 8px;
@@ -102,7 +102,7 @@
 
 .auth-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 10px 25px rgba(9, 132, 227, 0.3);
 }
 
 /* Dashboard */
@@ -124,7 +124,7 @@
 }
 
 .dashboard-title i {
-  color: #667eea;
+  color: #0984e3;
 }
 
 .header-actions {
@@ -206,7 +206,7 @@
 }
 
 .stat-icon.purple {
-  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  background: linear-gradient(135deg, #0984e3, #74b9ff);
 }
 
 .stat-icon.orange {
@@ -249,7 +249,7 @@
 }
 
 .chart-title i {
-  color: #667eea;
+  color: #0984e3;
 }
 
 /* Top Projects */
@@ -276,7 +276,7 @@
 .rank {
   width: 30px;
   height: 30px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #0984e3, #74b9ff);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -329,7 +329,7 @@
 
 .bar-fill {
   height: 100%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #0984e3, #74b9ff);
   border-radius: 4px;
   transition: width 0.5s ease;
 }
@@ -379,29 +379,29 @@
   .analytics-dashboard {
     padding: 80px 1.5rem;
   }
-  
+
   .dashboard-header {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .header-actions {
     width: 100%;
   }
-  
+
   .btn-secondary,
   .btn-danger {
     flex: 1;
   }
-  
+
   .stats-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .charts-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .activity-item {
     grid-template-columns: 80px 1fr 50px;
     gap: 0.5rem;
@@ -412,11 +412,11 @@
   .analytics-dashboard {
     padding: 60px 1rem;
   }
-  
+
   .dashboard-title {
     font-size: 1.5rem;
   }
-  
+
   .auth-card {
     padding: 2rem 1.5rem;
   }

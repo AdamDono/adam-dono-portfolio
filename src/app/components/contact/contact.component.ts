@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -40,9 +40,15 @@ export class ContactComponent {
     this.submitMessage = null;
 
     // Your Formspree endpoint
-    const formspreeUrl = 'https://formspree.io/f/xovnkgpd';
+    const formspreeUrl = 'https://formspree.io/f/mzdbndja';
 
-    this.http.post(formspreeUrl, this.contactForm.value, {
+    // Create a payload that maps 'subject' to '_subject' for Formspree
+    const formData = {
+      ...this.contactForm.value,
+      _subject: this.contactForm.value.subject
+    };
+
+    this.http.post(formspreeUrl, formData, {
       headers: { 'Accept': 'application/json' }
     }).subscribe({
       next: () => {

@@ -1,106 +1,97 @@
-<!-- portfolio.component.html -->
 <section id="portfolio" class="portfolio-section">
   <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
-    
-    <p class="portfolio-intro">A selection of projects showcasing my expertise in UI/UX design and development across various industries and platforms.</p>
-    
+    <h1 class="section-title">Case Studies</h1>
+
     <div class="filter-tabs">
       @for (category of categories; track category) {
-        <button 
-          class="filter-tab {{ selectedCategory === category ? 'active' : '' }}"
-          (click)="filterProjects(category)">
-          {{ category }}
-        </button>
+      <button class="filter-tab {{ selectedCategory === category ? 'active' : '' }}" (click)="filterProjects(category)">
+        {{ category }}
+      </button>
       }
     </div>
-    
+
     @if (isLoading) {
-      <div class="loading-state">
-        <app-loading type="spinner" size="large"></app-loading>
-      </div>
+    <div class="loading-state">
+      <app-loading type="spinner" size="large"></app-loading>
+    </div>
     } @else {
-      <div class="portfolio-grid">
-        @for (project of filteredProjects; track project.id) {
-          <div class="project-card">
-            <div class="project-image">
-              @if (project.youtubeUrl) {
-                <iframe
-                  [src]="project.youtubeUrl | safeUrl"
-                  title="{{ project.title }} promo video"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen>
-                </iframe>
-              } @else if (project.videoUrl) {
-                <video 
-                  #videoPlayer
-                  [src]="project.videoUrl" 
-                  autoplay 
-                  muted 
-                  loop 
-                  playsinline 
-                  [title]="project.title"
-                  [muted]="true"
-                  [volume]="0">
-                </video>
-                <button class="fullscreen-btn" (click)="toggleFullscreen(videoPlayer)" title="View fullscreen">
-                  <i class="fas fa-expand"></i>
-                </button>
-              } @else if (project.imageUrl) {
-                <img [src]="project.imageUrl" [alt]="project.title">
-              }
-              <div class="project-category">{{ project.category }}</div>
-              @if (project.caseStudy) {
-                <div class="case-study-badge">
-                  <i class="fas fa-file-alt"></i> Case Study
-                </div>
-              }
-            </div>
-            
-            <div class="project-content">
-              <h3 class="project-title">{{ project.title }}</h3>
-              
-              <p class="project-description">{{ project.description }}</p>
-              
-              <div class="tech-tags">
-                @for (tag of project.tags; track tag) {
-                  <span class="tech-tag">{{ tag }}</span>
-                }
-              </div>
-              
-              <div class="project-links">
-                @if (project.caseStudy) {
-                  <button (click)="openCaseStudy(project)" class="project-link case-study-link">
-                    <i class="fas fa-book-open"></i>
-                    <span>View Case Study</span>
-                  </button>
-                }
-                <a [href]="project.demoLink" class="project-link demo-link">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span>{{ project.category === 'UI/UX Design' ? 'Live Prototype' : 'Live Demo' }}</span>
-                </a>
-                <a [href]="project.codeLink || project.demoLink" class="project-link code-link">
-                  <i class="fas fa-code"></i>
-                  <span>{{ project.category === 'UI/UX Design' ? 'View Figma' : 'View Code' }}</span>
-                </a>
-              </div>
-              @if (project.privateRepo) {
-                <p class="link-count">Code is hosted in a private repository.</p>
-              }
-            </div>
+    <div class="portfolio-grid">
+      @for (project of filteredProjects; track project.id) {
+      <div class="project-card">
+        <div class="project-image">
+          @if (project.videoUrl) {
+          @if (isYouTubeUrl(project.videoUrl)) {
+          <iframe class="project-video" [src]="getYouTubeEmbedUrl(project.videoUrl)" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+          } @else {
+          <video class="project-video" [src]="project.videoUrl" [muted]="true" autoplay loop playsinline preload="auto"
+            #videoPlayer>
+          </video>
+          <div class="video-controls" (click)="$event.stopPropagation()">
+            <button class="control-btn play-pause-btn" (click)="togglePlayPause(videoPlayer)" aria-label="Play/Pause">
+              <i class="fas" [class.fa-play]="!isVideoPlaying(videoPlayer)"
+                [class.fa-pause]="isVideoPlaying(videoPlayer)"></i>
+            </button>
+            <button class="control-btn fullscreen-btn" (click)="playVideoFullscreen($event, videoPlayer)"
+              aria-label="Fullscreen">
+              <i class="fas fa-expand"></i>
+            </button>
           </div>
-        }
+          }
+          } @else if (project.imageUrl) {
+          <img [src]="project.imageUrl" [alt]="project.title">
+          }
+          <div class="project-overlay">
+            <div class="project-category">{{ project.category }}</div>
+            <h3 class="project-title">{{ project.title }}</h3>
+          </div>
+        </div>
+
+        <div class="project-content">
+          <div class="tech-tags">
+            @for (tag of project.tags; track tag) {
+            <span class="tech-tag">{{ tag }}</span>
+            }
+          </div>
+
+          <div class="project-links">
+            @if (project.caseStudy) {
+            <button (click)="openCaseStudy(project)" class="project-link case-study-link">
+              <i class="fas fa-book-open"></i>
+              <span>Read Study</span>
+            </button>
+            }
+            @if (project.category === 'Web Application' || (project.demoLink && project.demoLink !== '#')) {
+            <a [href]="project.demoLink || '#'" target="_blank" class="project-link demo-link">
+              <i class="fas fa-external-link-alt"></i>
+              <span>Demo</span>
+            </a>
+            }
+            @if (project.category === 'Web Application' || (project.codeLink && project.codeLink !== '#')) {
+            @if (project.privateRepo) {
+            <span class="project-link code-link disabled">
+              <i class="fas fa-lock"></i>
+              <span>Private Repo</span>
+            </span>
+            } @else {
+            <a [href]="project.codeLink || '#'" target="_blank" class="project-link code-link">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            }
+            }
+          </div>
+        </div>
       </div>
+      }
+    </div>
     }
-  
   </div>
-  
-  <!-- Case Study Modal -->
+
   @if (selectedProject) {
-    <app-case-study-modal 
-      [project]="selectedProject" 
-      (close)="closeCaseStudy()">
-    </app-case-study-modal>
+  <app-case-study-modal [project]="selectedProject" (close)="closeCaseStudy()">
+  </app-case-study-modal>
   }
 </section>

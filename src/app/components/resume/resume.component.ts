@@ -1,39 +1,23 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
 
 @Component({
   selector: 'app-resume',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SafeUrlPipe],
   templateUrl: './resume.component.html',
   styleUrls: ['./resume.component.css']
 })
 export class ResumeComponent {
-  resumeUrl: SafeResourceUrl;
-  resumePath = 'cv-adam-dono.pdf'; // PDF in public folder
-  showViewer = false;
+  isPreviewOpen = false;
+  resumeUrl = '/cv-adam-dono.pdf'; // Path served from public folder
 
-  constructor(private sanitizer: DomSanitizer) {
-    this.resumeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.resumePath);
+  openPreview() {
+    this.isPreviewOpen = true;
   }
 
-  downloadResume() {
-    const link = document.createElement('a');
-    link.href = this.resumePath;
-    link.download = 'cv-adam-dono.pdf';
-    link.click();
-  }
-
-  viewOnline() {
-    this.showViewer = true;
-  }
-
-  closeViewer() {
-    this.showViewer = false;
-  }
-
-  openInNewTab() {
-    window.open(this.resumePath, '_blank');
+  closePreview() {
+    this.isPreviewOpen = false;
   }
 }

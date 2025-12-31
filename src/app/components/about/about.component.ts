@@ -22,10 +22,11 @@ export class AboutComponent {
     { title: 'Prototyping', description: 'Building interactive prototypes to test ideas' },
     { title: 'User Research', description: 'Understanding user needs and behaviors' },
     { title: 'Frontend Development', description: 'Turning designs into functional code' },
-     { 
-  title: "Backend Development", 
-  description: "Designing APIs, managing databases, and ensuring secure and efficient server-side logic." 
-}
-
+    {
+      title: "Backend Development",
+      description: "Designing APIs, managing databases, and ensuring secure and efficient server-side logic."
+    },
+    { title: 'Deployment & Hosting', description: 'Deploying applications and managing cloud infrastructure' },
+    { title: 'Web3', description: 'Building decentralized applications and blockchain solutions' }
   ];
 }

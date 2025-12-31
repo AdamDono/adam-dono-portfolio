@@ -1,54 +1,43 @@
 <section id="testimonials" class="testimonials-section">
-  <div class="container">
-    <h2 class="section-title">What Clients Say</h2>
-    <p class="section-subtitle">Testimonials from satisfied clients and collaborators</p>
-    
+  <div class="container" data-aos="fade-up">
+    <h1 class="section-title">Testimonials</h1>
+
     <div class="testimonials-carousel">
       @if (testimonials.length > 0) {
-        <div class="testimonial-card" [@slideAnimation]>
-          <div class="quote-icon">
-            <i class="fas fa-quote-left"></i>
-          </div>
-          
-          <p class="testimonial-content">{{ testimonials[currentIndex].content }}</p>
-          
-          <div class="testimonial-author">
-            @if (testimonials[currentIndex].avatarUrl) {
-              <img [src]="testimonials[currentIndex].avatarUrl" 
-                   [alt]="testimonials[currentIndex].author"
-                   class="author-avatar">
-            } @else {
-              <div class="author-avatar-placeholder">
-                <i class="fas fa-user"></i>
-              </div>
-            }
-            
-            <div class="author-info">
-              <h4 class="author-name">{{ testimonials[currentIndex].author }}</h4>
-              <p class="author-position">{{ testimonials[currentIndex].position }}</p>
-            </div>
+      <div class="testimonial-card">
+        <div class="quote-icon">
+          <i class="ph ph-quotes-fill"></i>
+        </div>
+
+        <p class="testimonial-content">{{ testimonials[currentIndex].content }}</p>
+
+        <div class="testimonial-author">
+          <img [src]="testimonials[currentIndex].avatarUrl || '/user-placeholder.jpg'"
+            [alt]="testimonials[currentIndex].author" class="author-avatar">
+
+          <div class="author-info">
+            <span class="author-name">{{ testimonials[currentIndex].author }}</span>
+            <span class="author-position">{{ testimonials[currentIndex].position }}</span>
           </div>
         </div>
-        
-        <div class="carousel-controls">
-          <button class="control-btn prev" (click)="prevTestimonial()" aria-label="Previous testimonial">
-            <i class="fas fa-chevron-left"></i>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="control-btn prev" (click)="prevTestimonial()">
+          <i class="ph ph-caret-left"></i>
+        </button>
+
+        <div class="carousel-dots">
+          @for (testimonial of testimonials; track $index) {
+          <button class="dot {{ $index === currentIndex ? 'active' : '' }}" (click)="goToTestimonial($index)">
           </button>
-          
-          <div class="carousel-dots">
-            @for (testimonial of testimonials; track testimonial.id; let i = $index) {
-              <button 
-                class="dot {{ i === currentIndex ? 'active' : '' }}"
-                (click)="goToTestimonial(i)"
-                [attr.aria-label]="'Go to testimonial ' + (i + 1)">
-              </button>
-            }
-          </div>
-          
-          <button class="control-btn next" (click)="nextTestimonial()" aria-label="Next testimonial">
-            <i class="fas fa-chevron-right"></i>
-          </button>
+          }
         </div>
+
+        <button class="control-btn next" (click)="nextTestimonial()">
+          <i class="ph ph-caret-right"></i>
+        </button>
+      </div>
       }
     </div>
   </div>

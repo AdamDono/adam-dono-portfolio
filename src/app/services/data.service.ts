@@ -15,7 +15,7 @@ export class DataService {
         id: 1,
         title: 'UI/UX Design',
         description: 'Creating intuitive and beautiful user interfaces that enhance user experience and drive engagement.',
-        icon: 'fas fa-pencil-ruler'
+        icon: 'fas fa-palette'
       },
       {
         id: 2,
@@ -27,7 +27,7 @@ export class DataService {
         id: 3,
         title: 'Brand Identity',
         description: 'Developing cohesive brand identities that communicate your values and resonate with your audience.',
-        icon: 'fas fa-palette'
+        icon: 'fas fa-swatchbook'
       }
     ];
   }
@@ -36,31 +36,43 @@ export class DataService {
     return [
       {
         id: 1,
-        title: 'E-commerce Platform (BuyMo)',
-        description: 'A complete online shopping solution with intuitive product browsing and checkout flow.',
-        imageUrl: 'assets/images/project1.jpg',
-        tags: [ 'Web Development'],
+        title: 'BuyMo E-commerce',
+        description: 'A full-stack e-commerce solution with dynamic product management and secure checkout.',
+        imageUrl: '/profile-pic.jpg',
+        videoUrl: '/BuyMoPromoVid.mov',
+        tags: ['Angular', 'Python', 'Flask', 'PostgreSQL'],
         category: 'Web Application',
-        link: '#',
-        featured: true
+        demoLink: 'https://buymo.example.com',
+        codeLink: 'https://github.com/adamdono/buymo',
+        caseStudy: {
+          problem: 'Retailers needed a more performant way to manage large inventories.',
+          solution: 'Built a custom inventory engine with real-time sync.',
+          results: '30% faster load times and 20% higher conversion.',
+          metrics: [
+            { label: 'Speed', value: '+30%', icon: 'ph ph-lightning' },
+            { label: 'Growth', value: '2.5x', icon: 'ph ph-trend-up' }
+          ]
+        }
       },
       {
         id: 2,
-        title: 'Mobile Banking App',
-        description: 'Redesigned mobile banking experience with improved navigation and transaction flows.',
-        imageUrl: 'assets/images/project2.jpg',
-        tags: ['Mobile UI', 'User Testing'],
-        category: 'UI/UX Design',
-        link: '#'
-      },
-      {
-        id: 3,
-        title: 'Portfolio Website',
-        description: 'Minimalist portfolio website for a photographer with focus on visual content.',
-        imageUrl: 'assets/images/project3.jpg',
-        tags: ['Web Design', 'Development'],
+        title: 'PowerRent Application',
+        description: 'Interactive equipment rental platform with real-time availability and social proof features.',
+        imageUrl: '/profile-pic.jpg',
+        videoUrl: '/PowerRent Screen Record.mov',
+        tags: ['TypeScript', 'Angular', 'Tailwind'],
         category: 'Web Application',
-        link: '#'
+        demoLink: 'https://powerrent.example.com',
+        codeLink: 'https://github.com/adamdono/powerrent',
+        caseStudy: {
+          problem: 'Equipment rental management was manual and prone to errors.',
+          solution: 'Developed a robust scheduling and booking system.',
+          results: 'Reduced administrative overhead by 40% in the first month.',
+          metrics: [
+            { label: 'Efficiency', value: '+40%', icon: 'ph ph-users-three' },
+            { label: 'Accuracy', value: '99%', icon: 'ph ph-check-circle' }
+          ]
+        }
       }
     ];
   }
@@ -69,31 +81,17 @@ export class DataService {
     return [
       {
         id: 1,
-        author: 'Jane Smith',
-        position: 'CEO, TechCorp',
-        content: 'Adam transformed our digital presence with his thoughtful designs and attention to detail. His UI/UX expertise helped us increase user engagement by 45%.',
-        avatarUrl: 'assets/images/avatar1.jpg'
+        author: 'Sarah Chen',
+        position: 'CEO at TechScale',
+        content: 'Adam\'s design sense is unparalleled. He didn\'t just build a dashboard; he created an experience that our users absolutely love. His attention to detail and technical execution are world-class.',
+        avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200'
       },
       {
         id: 2,
-        author: 'Michael Johnson',
-        position: 'Product Manager, InnovateCo',
-        content: 'Working with Adam was a pleasure. He delivered beyond our expectations on tight deadlines. His ability to understand complex requirements and translate them into intuitive designs is exceptional.',
-        avatarUrl: 'assets/images/avatar2.jpg'
-      },
-      {
-        id: 3,
-        author: 'Sarah Williams',
-        position: 'Founder, StartupHub',
-        content: 'Adam\'s full-stack development skills combined with his design expertise made him the perfect choice for our project. He built a beautiful, performant application that our users love.',
-        avatarUrl: 'assets/images/avatar3.jpg'
-      },
-      {
-        id: 4,
-        author: 'David Chen',
-        position: 'CTO, FinanceFlow',
-        content: 'The attention to detail and user-centric approach Adam brings to every project is remarkable. Our conversion rates improved by 60% after the redesign.',
-        avatarUrl: 'assets/images/avatar4.jpg'
+        author: 'Marcus J.',
+        position: 'Product Owner',
+        content: 'A visionary designer who understands the bridge between business goals and user needs. The Pulse project was a massive success thanks to his methodical approach to UX.',
+        avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200'
       }
     ];
   }

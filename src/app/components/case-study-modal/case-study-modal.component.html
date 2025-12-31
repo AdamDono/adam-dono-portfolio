@@ -1,122 +1,102 @@
 @if (project) {
-  <div class="modal-overlay" (click)="closeModal()">
-    <div class="modal-content" (click)="stopPropagation($event)">
-      <button class="close-btn" (click)="closeModal()">
-        <i class="fas fa-times"></i>
-      </button>
-      
-      <div class="modal-header">
-        <div class="project-badge">{{ project.category }}</div>
-        <h2 class="project-title">{{ project.title }}</h2>
-        <p class="project-description">{{ project.description }}</p>
-        
-        <div class="tech-tags">
-          @for (tag of project.tags; track tag) {
-            <span class="tech-tag">{{ tag }}</span>
-          }
-        </div>
-      </div>
-      
-      @if (project.caseStudy) {
-        <div class="modal-body">
-          <!-- Problem Section -->
-          <div class="case-study-section">
-            <div class="section-icon problem">
-              <i class="fas fa-exclamation-circle"></i>
-            </div>
-            <div class="section-content">
-              <h3>The Problem</h3>
-              <p>{{ project.caseStudy.problem }}</p>
-            </div>
-          </div>
-          
-          <!-- Solution Section -->
-          <div class="case-study-section">
-            <div class="section-icon solution">
-              <i class="fas fa-lightbulb"></i>
-            </div>
-            <div class="section-content">
-              <h3>The Solution</h3>
-              <p>{{ project.caseStudy.solution }}</p>
-            </div>
-          </div>
-          
-          <!-- Before/After Comparison -->
-          @if (project.caseStudy.beforeImage && project.caseStudy.afterImage) {
-            <div class="before-after-section">
-              <h3>Before & After</h3>
-              <div class="comparison-grid">
-                <div class="comparison-item">
-                  <span class="comparison-label before">Before</span>
-                  <img [src]="project.caseStudy.beforeImage" alt="Before">
-                </div>
-                <div class="comparison-item">
-                  <span class="comparison-label after">After</span>
-                  <img [src]="project.caseStudy.afterImage" alt="After">
-                </div>
-              </div>
-            </div>
-          }
-          
-          <!-- Metrics Section -->
-          @if (project.caseStudy.metrics && project.caseStudy.metrics.length > 0) {
-            <div class="metrics-section">
-              <h3>Impact & Results</h3>
-              <div class="metrics-grid">
-                @for (metric of project.caseStudy.metrics; track metric.label) {
-                  <div class="metric-card">
-                    @if (metric.icon) {
-                      <i [class]="metric.icon"></i>
-                    }
-                    <div class="metric-value">{{ metric.value }}</div>
-                    <div class="metric-label">{{ metric.label }}</div>
-                  </div>
-                }
-              </div>
-            </div>
-          }
-          
-          <!-- Results Section -->
-          <div class="case-study-section">
-            <div class="section-icon results">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <div class="section-content">
-              <h3>Results</h3>
-              <p>{{ project.caseStudy.results }}</p>
-            </div>
-          </div>
-          
-          <!-- Testimonial -->
-          @if (project.caseStudy.testimonial) {
-            <div class="testimonial-section">
-              <div class="quote-icon">
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <blockquote>{{ project.caseStudy.testimonial.quote }}</blockquote>
-              <div class="testimonial-author">
-                <strong>{{ project.caseStudy.testimonial.author }}</strong>
-                <span>{{ project.caseStudy.testimonial.role }}</span>
-              </div>
-            </div>
-          }
-        </div>
-      }
-      
-      <div class="modal-footer">
-        @if (project.demoLink && project.demoLink !== '#') {
-          <a [href]="project.demoLink" target="_blank" class="btn-primary">
-            <i class="fas fa-external-link-alt"></i>
-            View Live Demo
-          </a>
-        }
-        @if (project.codeLink && project.codeLink !== '#') {
-          <a [href]="project.codeLink" target="_blank" class="btn-secondary">
-            <i class="fas fa-code"></i>
-            View Code
-          </a>
+<div class="modal-overlay" (click)="closeModal()">
+  <div class="modal-content" (click)="stopPropagation($event)">
+    <button class="close-btn" (click)="closeModal()">
+      <i class="ph ph-bold ph-x"></i>
+    </button>
+
+    <div class="modal-header">
+      <div class="project-badge">{{ project.category }}</div>
+      <h2 class="project-title">{{ project.title }}</h2>
+      <p class="project-description">{{ project.description }}</p>
+
+      <div class="tech-tags">
+        @for (tag of project.tags; track tag) {
+        <span class="tech-tag">{{ tag }}</span>
         }
       </div>
     </div>
+
+    @if (project.caseStudy) {
+    <div class="modal-body">
+      <div class="case-study-section">
+        <div class="section-icon problem">
+          <i class="ph ph-bold ph-warning-circle"></i>
+        </div>
+        <div class="section-content">
+          <h3>The Challenge</h3>
+          <p>{{ project.caseStudy.problem }}</p>
+        </div>
+      </div>
+
+      <div class="case-study-section">
+        <div class="section-icon solution">
+          <i class="ph ph-bold ph-lightbulb"></i>
+        </div>
+        <div class="section-content">
+          <h3>The Solution</h3>
+          <p>{{ project.caseStudy.solution }}</p>
+        </div>
+      </div>
+
+      @if (project.caseStudy.metrics && project.caseStudy.metrics.length > 0) {
+      <div class="metrics-section">
+        <h3>Key Results</h3>
+        <div class="metrics-grid">
+          @for (metric of project.caseStudy.metrics; track metric.label) {
+          <div class="metric-card">
+            @if (metric.icon) {
+            <i class="ph ph-bold {{metric.icon}}"></i>
+            }
+            <div class="metric-info">
+              <div class="metric-value">{{ metric.value }}</div>
+              <div class="metric-label">{{ metric.label }}</div>
+            </div>
+          </div>
+          }
+        </div>
+      </div>
+      }
+
+      <div class="case-study-section">
+        <div class="section-icon results">
+          <i class="ph ph-bold ph-chart-line-up"></i>
+        </div>
+        <div class="section-content">
+          <h3>Impact</h3>
+          <p>{{ project.caseStudy.results }}</p>
+        </div>
+      </div>
+
+      @if (project.caseStudy.testimonial) {
+      <div class="testimonial-section">
+        <div class="quote-icon">
+          <i class="ph ph-bold ph-quotes"></i>
+        </div>
+        <blockquote>{{ project.caseStudy.testimonial.quote }}</blockquote>
+        <div class="testimonial-author">
+          <strong>{{ project.caseStudy.testimonial.author }}</strong>
+          <span>{{ project.caseStudy.testimonial.role }}</span>
+        </div>
+      </div>
+      }
+    </div>
+    }
+
+    <div class="modal-footer">
+      @if (project.demoLink && project.demoLink !== '#') {
+      <a [href]="project.demoLink" target="_blank" class="btn-primary">
+        <i class="ph ph-bold ph-arrow-square-out"></i>
+        View Live Demo
+      </a>
+      }
+      @if (project.codeLink && project.codeLink !== '#') {
+      <a [href]="project.codeLink" target="_blank" class="btn-secondary">
+        <i class="ph ph-bold ph-github-logo"></i>
+        View Code
+      </a>
+      }
+    </div>
   </div>
+</div>
 }
