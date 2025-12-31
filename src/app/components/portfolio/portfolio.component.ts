@@ -112,14 +112,10 @@ export class PortfolioComponent implements OnInit {
 
   filteredProjects = this.projects;
 
-  ngOnInit() {
-    // Generate safe URLs once on init to prevent iframe reloading during change detection
-    this.projects.forEach(project => {
-      if (project.videoUrl && this.isYouTubeUrl(project.videoUrl)) {
-        project.safeVideoUrl = this.getYouTubeEmbedUrl(project.videoUrl);
-      }
-    });
+  // Cache for safe URLs to prevent iframe reloading
+  private urlCache = new Map<string, SafeResourceUrl>();
 
+  ngOnInit() {
     setTimeout(() => {
       this.isLoading = false;
     }, 800);
@@ -181,6 +177,11 @@ export class PortfolioComponent implements OnInit {
   }
 
   getYouTubeEmbedUrl(url: string): SafeResourceUrl {
+    // Check cache first
+    if (this.urlCache.has(url)) {
+      return this.urlCache.get(url)!;
+    }
+
     let videoId = '';
 
     // Robust regex to extract ID from various YouTube URL formats
@@ -195,6 +196,10 @@ export class PortfolioComponent implements OnInit {
 
     // Restored exact params from reference commit: autoplay=1&mute=1&loop=1&playlist={videoId} + HD quality
     const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&vq=hd720`;
-    return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+    const safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+
+    // Cache and return
+    this.urlCache.set(url, safeUrl);
+    return safeUrl;
   }
 }

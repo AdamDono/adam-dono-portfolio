@@ -179,7 +179,19 @@
   pointer-events: none;
 }
 
-/* Hover effect removed as requested */
+.project-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  /* Added padding at bottom as requested */
+  line-height: 1.6;
+}
+
+/* Hide title in overlay since we moved it to card */
+.project-overlay .project-title {
+  display: none;
+}
+
 /* .project-card:hover .project-overlay {
   opacity: 1;
 } */

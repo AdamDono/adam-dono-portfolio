@@ -21,7 +21,7 @@
         <div class="project-image">
           @if (project.videoUrl) {
           @if (isYouTubeUrl(project.videoUrl)) {
-          <iframe class="project-video" [src]="project.safeVideoUrl" frameborder="0"
+          <iframe class="project-video" [src]="getYouTubeEmbedUrl(project.videoUrl)" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen>
           </iframe>
@@ -44,12 +44,17 @@
           <img [src]="project.imageUrl" [alt]="project.title">
           }
           <div class="project-overlay">
-            <div class="project-category">{{ project.category }}</div>
-            <h3 class="project-title">{{ project.title }}</h3>
+            <!-- Title moved to card body as requested -->
           </div>
         </div>
 
         <div class="project-content">
+          <div class="project-category"
+            style="color: var(--primary-color); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem; display: block;">
+            {{ project.category }}</div>
+          <h3 class="project-title"
+            style="font-size: 1.5rem; margin-bottom: 1rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
+            {{ project.title }}</h3>
           <p class="project-description">{{ project.description }}</p>
           <div class="tech-tags">
             @for (tag of project.tags; track tag) {
