@@ -103,14 +103,14 @@ section {
   background: var(--secondary-color);
 }
 
-/* Custom Cursor Overrides */
-app-custom-cursor {
+/* Custom Cursor removed for better UX consistency */
+/* app-custom-cursor {
   display: block !important;
 }
 
 * {
   cursor: none !important;
-}
+} */
 
 @media (max-width: 768px) {
   * {

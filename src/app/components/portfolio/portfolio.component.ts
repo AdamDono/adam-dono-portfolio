@@ -113,6 +113,13 @@ export class PortfolioComponent implements OnInit {
   filteredProjects = this.projects;
 
   ngOnInit() {
+    // Generate safe URLs once on init to prevent iframe reloading during change detection
+    this.projects.forEach(project => {
+      if (project.videoUrl && this.isYouTubeUrl(project.videoUrl)) {
+        project.safeVideoUrl = this.getYouTubeEmbedUrl(project.videoUrl);
+      }
+    });
+
     setTimeout(() => {
       this.isLoading = false;
     }, 800);
