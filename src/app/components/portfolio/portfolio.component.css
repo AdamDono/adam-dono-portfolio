@@ -153,9 +153,13 @@
   margin-right: auto;
 }
 
-.project-card:hover .project-image img,
-.project-card:hover .project-video {
+.project-card:hover .project-image img {
   transform: scale(1.1);
+}
+
+/* Video should NOT scale on hover to avoid fullscreen bugs and UI annoyance */
+.project-card:hover .project-video {
+  transform: none;
 }
 
 .project-overlay {
@@ -164,8 +168,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(5, 5, 5, 0.9), transparent);
-  opacity: 0.8;
+  background: linear-gradient(to top, rgba(5, 5, 5, 0.6), transparent 40%);
+  opacity: 1;
+  /* Keep fully visible, no hover effect */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -174,9 +179,10 @@
   pointer-events: none;
 }
 
-.project-card:hover .project-overlay {
+/* Hover effect removed as requested */
+/* .project-card:hover .project-overlay {
   opacity: 1;
-}
+} */
 
 .project-category {
   font-size: 0.8rem;

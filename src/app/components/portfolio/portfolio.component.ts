@@ -186,8 +186,8 @@ export class PortfolioComponent implements OnInit {
       console.warn('Could not extract video ID from:', url);
     }
 
-    // Restored exact params from reference commit: autoplay=1&mute=1&loop=1&playlist={videoId}
-    const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}`;
+    // Restored exact params from reference commit: autoplay=1&mute=1&loop=1&playlist={videoId} + HD quality
+    const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&vq=hd720`;
     return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
   }
 }
