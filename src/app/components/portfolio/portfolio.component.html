@@ -53,7 +53,7 @@
             style="color: var(--primary-color); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.5rem; display: block;">
             {{ project.category }}</div>
           <h3 class="project-title"
-            style="font-size: 1.5rem; margin-bottom: 1rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
+            style="font-size: 1.5rem; margin-bottom: 1rem; background: var(--gradient-primary); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">
             {{ project.title }}</h3>
           <p class="project-description">{{ project.description }}</p>
           <div class="tech-tags">
@@ -69,8 +69,8 @@
               <span>Read Study</span>
             </button>
             }
-            @if (project.category === 'Web Application' || (project.demoLink && project.demoLink !== '#')) {
-            <a [href]="project.demoLink || '#'" target="_blank" class="project-link demo-link">
+            @if (project.demoLink && project.demoLink !== '#') {
+            <a [href]="project.demoLink" target="_blank" rel="noopener noreferrer" class="project-link demo-link">
               <i class="fas fa-external-link-alt"></i>
               <span>Demo</span>
             </a>
@@ -82,7 +82,7 @@
               <span>Private Repo</span>
             </span>
             } @else {
-            <a [href]="project.codeLink || '#'" target="_blank" class="project-link code-link">
+            <a [href]="project.codeLink" target="_blank" rel="noopener noreferrer" class="project-link code-link">
               <i class="fab fa-github"></i>
               <span>GitHub</span>
             </a>

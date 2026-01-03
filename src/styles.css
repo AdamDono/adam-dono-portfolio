@@ -26,7 +26,7 @@
   --glass-border: rgba(255, 255, 255, 0.06);
   --glass-blur: blur(12px);
 
-  --gradient-primary: linear-gradient(135deg, #00cec9 0%, #0984e3 100%);
+  --gradient-primary: #00cec9;
   --gradient-dark: linear-gradient(135deg, #0f0f0f 0%, #050505 100%);
 
   --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);

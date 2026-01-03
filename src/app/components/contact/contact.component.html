@@ -1,111 +1,106 @@
 <section id="contact" class="contact-section">
   <div class="container">
     <h2 class="section-title">Let's Work Together</h2>
-    
-    <p class="contact-intro">Ready to bring your ideas to life? I'd love to hear about your project and discuss how we can create something amazing together.</p>
-    
+
+    <p class="contact-intro">Ready to bring your ideas to life? I'd love to hear about your project and discuss how we
+      can create something amazing together.</p>
+
     <div class="contact-content">
       <div class="contact-info">
         <h3>Get In Touch</h3>
-        
+
         <div class="contact-details">
           <div class="contact-item">
             <div class="contact-label">Email</div>
-            <a [href]="'mailto:' + contactInfo.email" class="contact-value" aria-label="Email Adam Dono">{{ contactInfo.email }}</a>
+            <a [href]="'mailto:' + contactInfo.email" class="contact-value" aria-label="Email Adam Dono">{{
+              contactInfo.email }}</a>
           </div>
-          
+
           <div class="contact-item">
             <div class="contact-label">Phone</div>
-            <a [href]="'tel:' + contactInfo.phone" class="contact-value" aria-label="Call Adam Dono">{{ contactInfo.phone }}</a>
+            <a [href]="'tel:' + contactInfo.phone" class="contact-value" aria-label="Call Adam Dono">{{
+              contactInfo.phone }}</a>
           </div>
-          
+
           <div class="contact-item">
             <div class="contact-label">Location</div>
             <div class="contact-value">{{ contactInfo.location }}</div>
           </div>
         </div>
-        
+
         <div class="social-links">
           <div class="social-label">Follow Me</div>
           <div class="social-icons">
-            <a href="https://www.linkedin.com/in/adam-dono-85b766242/" class="social-icon" aria-label="LinkedIn Profile">
+            <a href="https://www.linkedin.com/in/adam-dono-85b766242/" target="_blank" rel="noopener noreferrer"
+              class="social-icon" aria-label="LinkedIn Profile">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://dribbble.com/AdamDono" class="social-icon" aria-label="Dribbble Profile">
+            <a href="https://dribbble.com/AdamDono" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Dribbble Profile">
               <i class="fab fa-dribbble"></i>
             </a>
-            <a href="https://www.behance.net/adamdono" class="social-icon" aria-label="Behance Profile">
+            <a href="https://www.behance.net/adamdono" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Behance Profile">
               <i class="fab fa-behance"></i>
             </a>
-            <a href="https://x.com/FlipBrickzMusic" class="social-icon" aria-label="Twitter Profile">
+            <a href="https://x.com/FlipBrickzMusic" target="_blank" rel="noopener noreferrer" class="social-icon"
+              aria-label="Twitter Profile">
               <i class="fab fa-twitter"></i>
             </a>
-          
+
           </div>
         </div>
       </div>
-      
+
       <div class="contact-form-container">
         <h3>Available for Projects</h3>
-        <p class="availability-text">I'm currently available for freelance projects and full-time opportunities. Let's discuss your vision and create something extraordinary together.</p>
-        
+        <p class="availability-text">I'm currently available for freelance projects and full-time opportunities. Let's
+          discuss your vision and create something extraordinary together.</p>
+
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
           <div class="form-group" [class.error]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
             <label for="name">Name *</label>
-            <input 
-              type="text" 
-              id="name" 
-              formControlName="name" 
-              placeholder="Your name" 
-              aria-label="Your name">
+            <input type="text" id="name" formControlName="name" placeholder="Your name" aria-label="Your name">
             <span class="error-message" *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
               Name is required (min 2 characters).
             </span>
           </div>
-          
-          <div class="form-group" [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+
+          <div class="form-group"
+            [class.error]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
             <label for="email">Email *</label>
-            <input 
-              type="email" 
-              id="email" 
-              formControlName="email" 
-              placeholder="your@email.com" 
-              aria-label="Your email">
+            <input type="email" id="email" formControlName="email" placeholder="your@email.com" aria-label="Your email">
             <span class="error-message" *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
               Valid email is required.
             </span>
           </div>
-          
-          <div class="form-group" [class.error]="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
+
+          <div class="form-group"
+            [class.error]="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
             <label for="subject">Subject *</label>
-            <input 
-              type="text" 
-              id="subject" 
-              formControlName="subject" 
-              placeholder="Project inquiry" 
+            <input type="text" id="subject" formControlName="subject" placeholder="Project inquiry"
               aria-label="Subject">
-            <span class="error-message" *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
+            <span class="error-message"
+              *ngIf="contactForm.get('subject')?.invalid && contactForm.get('subject')?.touched">
               Subject is required (min 3 characters).
             </span>
           </div>
-          
-          <div class="form-group" [class.error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+
+          <div class="form-group"
+            [class.error]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
             <label for="message">Message *</label>
-            <textarea 
-              id="message" 
-              formControlName="message" 
-              placeholder="Tell me about your project..." 
-              rows="5" 
+            <textarea id="message" formControlName="message" placeholder="Tell me about your project..." rows="5"
               aria-label="Your message"></textarea>
-            <span class="error-message" *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+            <span class="error-message"
+              *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
               Message is required (min 10 characters).
             </span>
           </div>
-          
+
           <button type="submit" class="submit-btn" [disabled]="isSubmitting || contactForm.invalid">
             {{ isSubmitting ? 'Sending...' : 'Send Message' }}
           </button>
-          
+
           <p class="submit-message" *ngIf="submitMessage" [class.success]="!submitMessage.includes('Oops')">
             {{ submitMessage }}
           </p>
