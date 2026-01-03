@@ -78,11 +78,16 @@ section {
   font-weight: 800;
   text-align: center;
   margin-bottom: 4rem;
+  color: var(--primary-color);
+  display: block;
+}
+
+/* If we want to use the gradient again later, we can toggle this back */
+.section-title.gradient {
   background: var(--gradient-primary);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: block;
 }
 
 /* Scrollbar Styling */
