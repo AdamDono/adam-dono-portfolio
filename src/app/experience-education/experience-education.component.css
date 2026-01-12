@@ -5,6 +5,23 @@
   overflow: hidden;
 }
 
+.blob-xp-1 {
+  width: 500px;
+  height: 500px;
+  top: 40%;
+  left: -200px;
+  opacity: 0.1;
+}
+
+.blob-xp-2 {
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  right: -100px;
+  opacity: 0.1;
+  animation-delay: -12s;
+}
+
 .timeline-container {
   position: relative;
   max-width: 1000px;

@@ -2,6 +2,24 @@
   padding: 120px 0;
   background: var(--bg-primary);
   position: relative;
+  overflow: hidden;
+}
+
+.blob-contact-1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: 20%;
+  opacity: 0.1;
+}
+
+.blob-contact-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: -100px;
+  opacity: 0.1;
+  animation-delay: -3s;
 }
 
 .contact-content {

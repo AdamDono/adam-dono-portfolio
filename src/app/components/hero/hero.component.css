@@ -137,6 +137,10 @@
   overflow: hidden;
   z-index: 1;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .cta-button.primary {

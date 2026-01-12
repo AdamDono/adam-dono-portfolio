@@ -7,7 +7,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
   styleUrl: './hero.component.css'
 })
 export class HeroComponent implements OnInit, OnDestroy {
-  title = "UI/UX Designer & Developer";
+  title = "UFull-Stack Developer & UI/UX Designer";
   subtitle = "crafting exceptional digital experiences that users love";
   description = "With over 3+ years of experience, I specialize in creating beautiful, functional, and user-centered designs that drive business results.";
   ctaButtons = [
@@ -17,7 +17,7 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   // Typing animation properties
   typedText = '';
-  private textToType = "UI/UX Designer & Developer";
+  private textToType = "Full-Stack Developer & UI/UX Designer";
   private typingSpeed = 100; // milliseconds per character
   private deletingSpeed = 50;
   private pauseTime = 2000; // pause before deleting
