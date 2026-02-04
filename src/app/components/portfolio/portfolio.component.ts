@@ -72,41 +72,33 @@ export class PortfolioComponent implements OnInit {
     },
     {
       id: 5,
-      title: 'Portfolio Management',
+      title: 'Dr Sick',
       category: 'UI/UX Design',
-      description: 'Unified dashboard for financial asset tracking and performance analysis.',
-      tags: ['Figma', 'WireFrame', 'Prototype', 'UX Research'],
-      imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-      demoLink: 'https://www.figma.com/design/Gwve2tObvaz8X7JG0dWvEp/Portfolio-Management',
-      featured: true,
-      caseStudy: {
-        problem: 'Investment firms struggled with fragmented tools and cluttered interfaces.',
-        solution: 'Designed a unified system with interactive charts and streamlined workflows.',
-        results: 'Task completion time reduced by 50% and onboarding time cut by 85%.',
-        metrics: [
-          { label: 'Workload', value: '-50%', icon: 'ph-clock' },
-          { label: 'Satisfaction', value: '4.8/5', icon: 'ph-star' }
-        ]
-      }
+      description: 'A Mobile design High fidelity wireframe that lets a user login, search for doctors, and book appointments via direct message.',
+      tags: ['Figma', 'Wireframe', 'Mobile Design', 'High Fidelity'],
+      imageUrl: '/dr-sick.png',
+      demoLink: '#',
+      featured: true
     },
     {
       id: 6,
-      title: 'In-Need App',
+      title: 'Scamify',
       category: 'UI/UX Design',
-      description: 'Community-driven platform connecting volunteers with local needs.',
-      tags: ['Figma', 'Mobile UI', 'Social Impact'],
-      imageUrl: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80',
-      demoLink: 'https://www.figma.com/design/I4gGd7rddAv5avkhXgskz6/In-Need',
-      featured: true,
-      caseStudy: {
-        problem: 'Lack of centralized platform for local community aid and volunteer matching.',
-        solution: 'Mobile-first platform with location matching and verified profiles.',
-        results: 'Over 5,000 active users and 2,500+ successful connections.',
-        metrics: [
-          { label: 'Users', value: '5k+', icon: 'ph-users' },
-          { label: 'Impact', value: 'High', icon: 'ph-heart' }
-        ]
-      }
+      description: 'A Cyber Awareness App that alerts people of recent scam trends and educates them on how to avoid being scammed.',
+      tags: ['Figma', 'Cyber Awareness', 'Mobile App', 'Education'],
+      imageUrl: '/scamify.png',
+      demoLink: 'https://www.figma.com/design/HHo0du1H6aCdeI1X68gLBJ/ScamiFy?node-id=241-585&t=ZziyfDboNpijJ8g6-1',
+      featured: true
+    },
+    {
+      id: 7,
+      title: 'AbleWheels',
+      category: 'UI/UX Design',
+      description: 'A mobile application design that helps people with disabilities to get easy transportation suited for their needs.',
+      tags: ['Figma', 'Accessibility', 'Transportation', 'Mobile App'],
+      imageUrl: '/ablewheels.png',
+      demoLink: 'https://www.figma.com/design/Z1FYO6KXCVQz1oS5CSJCEN/AbleWHeels?node-id=144-1780&t=gsqfr6r4zP25foxH-1',
+      featured: true
     }
   ];
 

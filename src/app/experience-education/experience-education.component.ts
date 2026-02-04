@@ -24,7 +24,7 @@ export class ExperienceEducationComponent {
       type: 'experience',
       title: 'Full Stack Developer & UI/UX Designer',
       organization: 'Shaper',
-      date: 'Oct 2024 - Present',
+      date: 'October 2023 - Present',
       description: 'Focusing on UI/UX design and full-stack development for in-house projects. Responsibilities include project planning, API integration, and course content development. I also serve as a team leader for interns, mentoring and helping them through their coding journey.',
       icon: 'ph ph-briefcase',
       side: 'left'

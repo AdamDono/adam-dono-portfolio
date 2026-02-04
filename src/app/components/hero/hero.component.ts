@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -9,7 +9,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class HeroComponent implements OnInit, OnDestroy {
   title = "UFull-Stack Developer & UI/UX Designer";
   subtitle = "crafting exceptional digital experiences that users love";
-  description = "With over 3+ years of experience, I specialize in creating beautiful, functional, and user-centered designs that drive business results.";
+  description = "With over 4+ years of experience, I specialize in creating beautiful, functional, and user-centered designs that drive business results.";
   ctaButtons = [
     { text: 'View My Work', action: 'scrollToPortfolio', class: 'primary' },
     { text: 'Download CV', action: 'downloadCV', class: 'secondary' }

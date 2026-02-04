@@ -12,7 +12,7 @@ export class AboutComponent {
   My expertise spans user research, interaction and visual design, front-end development, and backend systems. With a user-centered mindset and strong technical foundation, I bring designs to life through intuitive interfaces, scalable architectures, and seamless functionality.`;
 
   stats = [
-    { number: '3+', label: 'Years Experience' },
+    { number: '4+', label: 'Years Experience' },
     { number: '5+', label: 'Happy Clients' },
     { number: '10+', label: 'Projects Completed' }
   ];

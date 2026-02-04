@@ -4,15 +4,15 @@
     <div class="username-input-container">
       <div class="input-with-icon">
         <i class="fas fa-user"></i>
-        <input type="text" [(ngModel)]="username" (keyup.enter)="onUsernameChange()" 
-               placeholder="Enter GitHub username" class="username-input">
+        <input type="text" [(ngModel)]="username" (keyup.enter)="onUsernameChange()" placeholder="Enter GitHub username"
+          class="username-input">
       </div>
       <button (click)="onUsernameChange()" class="refresh-btn">
         <i class="fas fa-sync-alt"></i>
       </button>
     </div>
   </div>
-  
+
   <!-- Contributions Section -->
   <div class="contributions-section">
     <div class="contributions-header">
@@ -31,15 +31,16 @@
         </a>
       </div>
     </div>
-    
+
     <!-- Contribution Grid -->
     <div class="contributions-grid">
       <div class="months-row">
-        <div class="month-cell" *ngFor="let month of ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug']">
+        <div class="month-cell"
+          *ngFor="let month of ['Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug']">
           {{ month }}
         </div>
       </div>
-      
+
       <div class="grid-container">
         <div class="days-column">
           <div class="day-cell"></div>
@@ -50,25 +51,22 @@
           <div class="day-cell">Fri</div>
           <div class="day-cell"></div>
         </div>
-        
+
         <div class="squares-grid">
           @if (isLoading) {
-            <div class="loading">
-              <i class="fas fa-spinner fa-spin"></i>
-              <span>Loading contributions...</span>
-            </div>
+          <div class="loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            <span>Loading contributions...</span>
+          </div>
           } @else {
-            <div *ngFor="let square of squares; let i = index" 
-                 class="contribution-square {{ getSquareColor(square.count) }}"
-                 (mouseover)="showTooltip($event, square)"
-                 (mouseout)="hideTooltip()"
-                 (touchstart)="showTooltip($event, square)"
-                 (touchend)="hideTooltip()">
-            </div>
+          <div *ngFor="let square of squares; let i = index"
+            class="contribution-square {{ getSquareColor(square.count) }}" (mouseover)="showTooltip($event, square)"
+            (mouseout)="hideTooltip()" (touchstart)="showTooltip($event, square)" (touchend)="hideTooltip()">
+          </div>
           }
         </div>
       </div>
-      
+
       <div class="year-labels">
         <span class="year-label">{{ selectedYear }}</span>
         <span class="year-label">{{ selectedYear - 1 }}</span>
@@ -87,60 +85,61 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Recent Activity Section -->
   <div class="activity-section">
     <div class="section-header">
       <h3><i class="fas fa-history"></i> Recent Activity</h3>
       @if (recentActivity.length > 0) {
-        <span class="activity-count">{{ recentActivity.length }} events</span>
+      <span class="activity-count">{{ recentActivity.length }} events</span>
       }
     </div>
-    
+
     @if (isLoading) {
-      <div class="loading-activity">
-        <i class="fas fa-spinner fa-spin"></i>
-        <span>Loading activity...</span>
-      </div>
+    <div class="loading-activity">
+      <i class="fas fa-spinner fa-spin"></i>
+      <span>Loading activity...</span>
+    </div>
     }
-    
+
     @if (!isLoading && recentActivity.length === 0) {
-      <div class="no-activity">
-        <i class="fas fa-inbox"></i>
-        <p>No recent activity found for {{ username }}</p>
-      </div>
+    <div class="no-activity">
+      <i class="fas fa-inbox"></i>
+      <p>No recent activity found for {{ username }}</p>
+    </div>
     }
-    
+
     <div class="activity-list">
       @for (event of recentActivity; track event.id) {
-        <div class="activity-item">
-          <div class="activity-icon">
-            <i [class]="getEventIcon(event.type)"></i>
-          </div>
-          <div class="activity-details">
-            <p class="activity-type">{{ event.type | titlecase }}</p>
-            <p class="activity-repo">{{ event.repo.name }}</p>
-            <p class="activity-date">
-              <i class="fas fa-clock"></i> {{ formatDate(event.created_at) }}
-            </p>
-          </div>
-          <div class="activity-arrow">
-            <i class="fas fa-chevron-right"></i>
-          </div>
+      <a [href]="'https://github.com/' + event.repo.name" target="_blank" rel="noopener noreferrer"
+        class="activity-item">
+        <div class="activity-icon">
+          <i [class]="getEventIcon(event.type)"></i>
         </div>
+        <div class="activity-details">
+          <p class="activity-type">{{ event.type | titlecase }}</p>
+          <p class="activity-repo">{{ event.repo.name }}</p>
+          <p class="activity-date">
+            <i class="fas fa-clock"></i> {{ formatDate(event.created_at) }}
+          </p>
+        </div>
+        <div class="activity-arrow">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </a>
       }
     </div>
   </div>
-  
+
   <div class="profile-footer">
     <a [href]="'https://github.com/' + username" target="_blank" class="profile-link">
       <i class="fas fa-external-link-alt"></i>
       View Full GitHub Profile
     </a>
-    
+
     <div class="contributions-info">
-      <a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile" 
-         target="_blank" class="learn-more">
+      <a href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile"
+        target="_blank" class="learn-more">
         <i class="fas fa-question-circle"></i> Learn how we count contributions
       </a>
       <div class="intensity-controls">
@@ -157,7 +156,7 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Tooltip -->
   <div class="tooltip" [class.visible]="tooltipVisible" [ngStyle]="tooltipPosition">
     {{ tooltipText }}

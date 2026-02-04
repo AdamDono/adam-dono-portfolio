@@ -250,11 +250,25 @@
   z-index: 2;
 }
 
-.l0 { background-color: var(--contrib-0); }
-.l1 { background-color: var(--contrib-1); }
-.l2 { background-color: var(--contrib-2); }
-.l3 { background-color: var(--contrib-3); }
-.l4 { background-color: var(--contrib-4); }
+.l0 {
+  background-color: var(--contrib-0);
+}
+
+.l1 {
+  background-color: var(--contrib-1);
+}
+
+.l2 {
+  background-color: var(--contrib-2);
+}
+
+.l3 {
+  background-color: var(--contrib-3);
+}
+
+.l4 {
+  background-color: var(--contrib-4);
+}
 
 .year-labels {
   display: flex;
@@ -370,6 +384,10 @@
   transition: var(--transition);
   cursor: pointer;
   gap: 16px;
+  text-decoration: none;
+  /* Prevent underline */
+  color: inherit;
+  /* Inherit color */
 }
 
 .activity-item:hover {
@@ -471,8 +489,13 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Mobile Responsiveness */
@@ -481,50 +504,50 @@
     padding: 16px;
     margin: 1rem 0;
   }
-  
+
   .activity-header {
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
   }
-  
+
   .activity-header h2 {
     justify-content: center;
   }
-  
+
   .username-input-container {
     justify-content: center;
   }
-  
+
   .username-input {
     width: 100%;
   }
-  
+
   .contributions-header {
     flex-direction: column;
     align-items: stretch;
     gap: 12px;
   }
-  
+
   .header-actions {
     justify-content: space-between;
   }
-  
+
   .months-row {
     margin-left: 0;
     overflow-x: auto;
     padding-bottom: 5px;
   }
-  
+
   .month-cell {
     flex: none;
     width: 40px;
   }
-  
+
   .grid-container {
     flex-direction: column;
   }
-  
+
   .days-column {
     flex-direction: row;
     width: 100%;
@@ -533,34 +556,35 @@
     justify-content: space-between;
     margin-right: 0;
   }
-  
+
   .day-cell {
     width: 30px;
     margin-bottom: 0;
   }
-  
+
   .squares-grid {
     height: auto;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
   }
-  
-  .year-labels, .contributions-legend {
+
+  .year-labels,
+  .contributions-legend {
     margin-left: 0;
     justify-content: center;
   }
-  
+
   .activity-item {
     padding: 12px;
   }
-  
+
   .section-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
   }
-  
+
   .activity-count {
     align-self: flex-start;
   }
@@ -572,30 +596,30 @@
     gap: 8px;
     align-items: stretch;
   }
-  
+
   .year-selector {
     justify-content: space-between;
   }
-  
+
   .settings-link {
     justify-content: center;
   }
-  
+
   .squares-grid {
     gap: 2px;
   }
-  
+
   .contribution-square {
     width: 12px;
     height: 12px;
   }
-  
+
   .activity-item {
     flex-direction: column;
     text-align: center;
     gap: 8px;
   }
-  
+
   .activity-icon {
     width: auto;
   }
@@ -632,14 +656,36 @@
 }
 
 /* Color levels based on contribution count */
-.l0 { background-color: var(--contrib-0); border-color: var(--border-color); }
-.l1 { background-color: var(--contrib-1); border-color: #0e4429; }
-.l2 { background-color: var(--contrib-2); border-color: #006d32; }
-.l3 { background-color: var(--contrib-3); border-color: #26a641; }
-.l4 { background-color: var(--contrib-4); border-color: #39d353; }
+.l0 {
+  background-color: var(--contrib-0);
+  border-color: var(--border-color);
+}
+
+.l1 {
+  background-color: var(--contrib-1);
+  border-color: #0e4429;
+}
+
+.l2 {
+  background-color: var(--contrib-2);
+  border-color: #006d32;
+}
+
+.l3 {
+  background-color: var(--contrib-3);
+  border-color: #26a641;
+}
+
+.l4 {
+  background-color: var(--contrib-4);
+  border-color: #39d353;
+}
 
 /* Make active squares more vibrant */
-.l1, .l2, .l3, .l4 {
+.l1,
+.l2,
+.l3,
+.l4 {
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -666,8 +712,15 @@
 }
 
 @keyframes tooltipFadeIn {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Footer improvements */
@@ -777,19 +830,19 @@
     align-items: stretch;
     gap: 16px;
   }
-  
+
   .contributions-info {
     justify-content: space-between;
     width: 100%;
   }
-  
+
   .intensity-controls {
     order: -1;
     margin-bottom: 12px;
     justify-content: center;
     width: 100%;
   }
-  
+
   .learn-more {
     justify-content: center;
     width: 100%;
