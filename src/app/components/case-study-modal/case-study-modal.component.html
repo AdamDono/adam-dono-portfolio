@@ -17,6 +17,10 @@
       </div>
     </div>
 
+    <div class="modal-featured-image">
+      <img [src]="project.imageUrl" [alt]="project.title">
+    </div>
+
     @if (project.caseStudy) {
     <div class="modal-body">
       <div class="case-study-section">
