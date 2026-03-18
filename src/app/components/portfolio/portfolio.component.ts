@@ -182,7 +182,7 @@ export class PortfolioComponent implements OnInit {
       description: 'A Cyber Awareness App that alerts people of recent scam trends and educates them on how to avoid being scammed.',
       tags: ['Figma', 'Cyber Awareness', 'Mobile App', 'Education'],
       imageUrl: '/scamify.png',
-      demoLink: 'https://www.figma.com/design/HHo0du1H6aCdeI1X68gLBJ/ScamiFy?node-id=241-585&t=ZziyfDboNpijJ8g6-1',
+      demoLink: 'https://www.figma.com/design/HHo0du1H6aCdeI1X68gLBJ/ScamiFy?node-id=241-585&t=Z9t0jzCLbU9R2tBN-0',
       featured: true
     },
     {
@@ -192,7 +192,7 @@ export class PortfolioComponent implements OnInit {
       description: 'A mobile application design that helps people with disabilities to get easy transportation suited for their needs.',
       tags: ['Figma', 'Accessibility', 'Transportation', 'Mobile App'],
       imageUrl: '/ablewheels.png',
-      demoLink: 'https://www.figma.com/design/Z1FYO6KXCVQz1oS5CSJCEN/AbleWHeels?node-id=144-1780&t=gsqfr6r4zP25foxH-1',
+      demoLink: 'https://www.figma.com/design/Z1FYO6KXCVQz1oS5CSJCEN/AbleWHeels?node-id=144-1780',
       featured: true
     }
   ];
