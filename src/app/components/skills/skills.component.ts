@@ -17,6 +17,8 @@ export class SkillsComponent {
         { name: "Figma", icon: "fab fa-figma" },
         { name: "Photoshop", icon: "fas fa-image" },
         { name: "Illustrator", icon: "fas fa-pen-nib" },
+        { name: "Sketch", icon: "fas fa-diamond" },
+        { name: "Canva", icon: "fas fa-clapperboard" },
         { name: "Framer", icon: "fas fa-cube" }
       ]
     },
@@ -25,8 +27,24 @@ export class SkillsComponent {
       skills: [
         { name: "Angular", icon: "fab fa-angular" },
         { name: "React", icon: "fab fa-react" },
+        { name: "React Native", icon: "fab fa-react" },
+        { name: "Flutter", icon: "fas fa-mobile-screen-button" },
+        { name: "Dart", icon: "fas fa-code" },
+        { name: "Expo", icon: "fas fa-rocket" },
         { name: "TypeScript", icon: "fas fa-code" },
-        { name: "Python/Flask", icon: "fab fa-python" }
+        { name: "Python/Flask", icon: "fab fa-python" },
+        { name: "Java", icon: "fab fa-java" }
+      ]
+    },
+    {
+      title: "Databases",
+      skills: [
+        { name: "PostgreSQL", icon: "fas fa-database" },
+        { name: "MongoDB", icon: "fas fa-leaf" },
+        { name: "Supabase", icon: "fas fa-bolt-lightning" },
+        { name: "Firebase", icon: "fab fa-google" },
+        { name: "Neon", icon: "fas fa-bolt" },
+        { name: "Aiven", icon: "fas fa-cloud" }
       ]
     },
     {
