@@ -14,7 +14,7 @@ import { LoadingComponent } from '../loading/loading.component';
   styleUrls: ['./portfolio.component.css']
 })
 export class PortfolioComponent implements OnInit {
-  categories = ['All', 'UI/UX Design', 'Web Application'];
+  categories = ['All', 'UI/UX Design', 'Web Application', 'Mobile Applications', 'Web 3'];
   selectedCategory = 'All';
   isLoading = true;
   selectedProject: Project | null = null;
@@ -193,6 +193,28 @@ export class PortfolioComponent implements OnInit {
       tags: ['Figma', 'Accessibility', 'Transportation', 'Mobile App'],
       imageUrl: '/ablewheels.png',
       demoLink: 'https://www.figma.com/design/Z1FYO6KXCVQz1oS5CSJCEN/AbleWHeels?node-id=144-1780',
+      featured: true
+    },
+    {
+      id: 14,
+      title: 'Spike AI',
+      category: 'Web 3',
+      description: 'A utility token launching on Base, integrated with AI-driven ecosystems to power the next generation of decentralized applications. It serves as the core utility token for the Binary Trading Bot, enabling automated executions and platform utility.',
+      tags: ['Web 3', 'Base', 'AI', 'Utility Token', 'Blockchain'],
+      videoUrl: 'https://youtu.be/q8D6-GiVqUs',
+      imageUrl: '/profile-pic.jpg',
+      demoLink: 'https://pacetech.dev/spike-ai.html',
+      featured: true
+    },
+    {
+      id: 15,
+      title: 'Binary Trading Bot',
+      category: 'Web Application',
+      description: 'Automated trading bot built with Python that utilizes high-frequency APIs to connect with binary trading platforms and delivers real-time signals and account updates via Telegram. Integrated with the Spike AI token ecosystem.',
+      tags: ['Python', 'API Integration', 'Trading Bot', 'Telegram API', 'Automation'],
+      imageUrl: '/profile-pic.jpg',
+      demoLink: '#',
+      codeLink: 'https://github.com/AdamDono/Chatbox',
       featured: true
     }
   ];
