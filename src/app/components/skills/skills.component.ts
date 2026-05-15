@@ -32,8 +32,12 @@ export class SkillsComponent {
         { name: "Dart", icon: "fas fa-code" },
         { name: "Expo", icon: "fas fa-rocket" },
         { name: "TypeScript", icon: "fas fa-code" },
+        { name: "Tailwind CSS", icon: "fab fa-css3" },
+        { name: "Radix UI", icon: "fas fa-layer-group" },
+        { name: "Bootstrap", icon: "fab fa-bootstrap" },
         { name: "Python/Flask", icon: "fab fa-python" },
-        { name: "Java", icon: "fab fa-java" }
+        { name: "Java", icon: "fab fa-java" },
+        { name: "Git", icon: "fab fa-git-alt" }
       ]
     },
     {
