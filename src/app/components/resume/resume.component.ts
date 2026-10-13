@@ -11,7 +11,7 @@ import { SafeUrlPipe } from '../../pipes/safe-url.pipe';
 })
 export class ResumeComponent {
   isPreviewOpen = false;
-  resumeUrl = '/cv-adam-dono.docx'; // Path served from public folder
+  resumeUrl = '/cv-adam-dono.pdf'; // Path served from public folder
 
   openPreview() {
     this.isPreviewOpen = true;
