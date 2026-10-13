@@ -71,8 +71,8 @@ export class HeroComponent implements OnInit, OnDestroy {
 
   downloadCV() {
     const link = document.createElement('a');
-    link.href = '/cv-adam-dono.pdf';  // Path relative to public folder
-    link.download = 'Adam-Dono-CV.pdf';  // Forces this filename on download
+    link.href = '/cv-adam-dono.docx';  // Path relative to public folder
+    link.download = 'Adam-Dono-CV.docx';  // Forces this filename on download
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

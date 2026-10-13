@@ -137,12 +137,13 @@ export class PortfolioComponent implements OnInit {
     },
     {
       id: 4,
-      title: 'Pacedebt',
+      title: 'Pace Finance',
       category: 'Web Application',
-      description: 'Full-stack personal finance app combining a clean interface with a secure backend to help users track spending, plan ahead, and visualize financial trends.',
-      tags: ['React', 'Node.js', 'Express', 'PostgreSQL'],
+      description: 'AI-powered debt eradication application that builds personalised payoff plans, tracks spending patterns, and visualises your path to financial freedom — all through a clean, intuitive interface backed by a secure full-stack architecture.',
+      tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'NeonDB', 'AI'],
+      videoUrl: 'https://youtu.be/tfyQv9LTcyU',
       imageUrl: '/profile-pic.jpg',
-      demoLink: 'https://pacedebt.onrender.com/login',
+      demoLink: 'https://pacefinances.co.za',
       codeLink: 'https://github.com/AdamDono/pacedebt',
       featured: true
     },
@@ -216,6 +217,18 @@ export class PortfolioComponent implements OnInit {
       demoLink: '#',
       codeLink: 'https://github.com/AdamDono/Chatbox',
       featured: true
+    },
+    {
+      id: 16,
+      title: 'Talent Gallery',
+      category: 'Web Application',
+      description: 'Full-stack platform to showcase professional talent profiles in a clean, searchable format. Features browsable candidate cards, detailed profiles, and curated collections — built for discovery and presentation at scale.',
+      tags: ['Next.js', 'React', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+      videoUrl: 'https://youtu.be/beV5pw29PJM',
+      imageUrl: '/profile-pic.jpg',
+      demoLink: 'https://talent.shaper.co.za/',
+      featured: true,
+      privateRepo: true
     }
   ];
 
